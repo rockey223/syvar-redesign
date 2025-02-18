@@ -10,13 +10,15 @@ export default function Home() {
     const lenis = new Lenis({
       autoRaf: true,
     });
+    console.log(lenis);
+    
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
 
     requestAnimationFrame(raf);
-    return lenis.destroy();
+
   }, []);
 
   return (
