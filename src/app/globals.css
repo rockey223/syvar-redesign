@@ -1,21 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* gray */
+  --color-gray-0: #9d9d9d;
+  --color-gray-200: #d3d3d3;
+  --color-gray-400: #afafaf;
+  --color-gray-600: #7c7c7c;
+  --color-gray-800: #343434;
+  --color-gray-900: #202020;
+  --color-yellow-0: #fffbf5;
+
+  /* blue */
+  --color-blue-0: #f5fbff;
+  --color-blue-100: #c5e7fd;
+  --color-blue-200: #98d2f9;
+  --color-blue-300: #70bef2;
+  --color-blue-400: #50ace9;
+  --color-blue-500: #389bdd;
+  --color-blue-600: #278acd;
+  --color-blue-700: #1b79b8;
+  --color-blue-800: #1367a0;
+  --color-blue-900: #0e5687;
+
+  /* yellow */
+  --color-yellow-100: #fde9c5;
+  --color-yellow-200: #f9d798;
+  --color-yellow-300: #f2c570;
+  --color-yellow-400: #e9b450;
+  --color-yellow-500: #dda338;
+  --color-yellow-600: #cd9327;
+  --color-yellow-700: #b8811b;
+  --color-yellow-800: #a06f13;
+  --color-yellow-900: #875d0e;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+body{
+  font-family: 'Work Sans';
+  
 }
