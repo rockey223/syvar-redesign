@@ -1,8 +1,24 @@
 'use client'
-import ReactLenis from "@studio-freight/react-lenis";
+import Lenis from "lenis";
+import { useEffect } from "react";
 
 const LenisProvider = ({children}) => {
-  return <ReactLenis root>{children}</ReactLenis>;
+    useEffect(() => {
+    // Initialize Lenis
+    const lenis = new Lenis({
+      autoRaf: true,
+    });
+    console.log(lenis);
+    
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+  }, []);
+  return <>{children}</>;
 };
 
 export default LenisProvider;
