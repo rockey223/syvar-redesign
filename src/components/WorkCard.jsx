@@ -10,6 +10,7 @@ const WorkCard = ({ work, index }) => {
   useGSAP(() => {
     gsap.to(`.featured_image${index}`, {
       y: "-20%",
+      ease: "none",
       //   duration: 2,
       scrollTrigger: {
         trigger: container.current,
