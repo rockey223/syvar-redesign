@@ -13,9 +13,9 @@ export default function Home() {
       <FeaturedWorks />
       <Process/>
       
+      {/* <section className="h-screen"></section>
       <section className="h-screen"></section>
-      <section className="h-screen"></section>
-      <section className="h-screen"></section>
+      <section className="h-screen"></section> */}
     </>
   );
 }
