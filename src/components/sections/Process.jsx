@@ -62,12 +62,8 @@ const Process = () => {
     const listItem = gsap.utils.toArray(".testing");
 
     listItem.forEach((list, index) => {
-      console.log(listItem.length);
-      console.log((-30 / listItem.length) * index - 1);
-      console.log(index < listItem.length - 1);
-
       index < listItem.length - 1 &&
-        gsapWithCSS
+        gsap
           .timeline({
             scrollTrigger: {
               trigger: list,
