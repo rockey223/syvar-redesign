@@ -1,10 +1,11 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import gsapWithCSS from "gsap/all";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 const processes = [
   {
@@ -46,6 +47,7 @@ const processes = [
 ];
 
 const Process = () => {
+  const processSection = useRef();
   useGSAP(() => {
     gsap.to(".left", {
       scrollTrigger: {
@@ -58,31 +60,45 @@ const Process = () => {
     });
 
     const listItem = gsap.utils.toArray(".testing");
+
     listItem.forEach((list, index) => {
-      gsap.to(".headers", {
-        yPercent: -index * 30,
-        scrollTrigger: {
-          markers: true,
-          trigger: list,
-          start: "top 80%",
-          end: "top 60%",
-          scrub: true,
-          onEnter: () =>
-            console.log(`Entered viewport: ${listItem[index].innerText}`),
-          onLeave: () =>
-            console.log(`Left viewport: ${listItem[index].innerText}`),
-        },
-      });
+      console.log(listItem.length);
+      console.log((-30 / listItem.length) * index - 1);
+      console.log(index < listItem.length - 1);
+
+      index < listItem.length - 1 &&
+        gsapWithCSS
+          .timeline({
+            scrollTrigger: {
+              trigger: list,
+              id: "elem" + index,
+              start: "center center",
+              end: "50% top",
+              scrub: !0,
+            },
+          })
+          .fromTo(
+            ".headers",
+            {
+              yPercent: () => (-100 / listItem.length) * index - 1,
+            },
+            {
+              ease: "power1.inOut",
+              yPercent: () => (-100 / listItem.length) * (index + 1) - 1,
+            }
+          );
     });
+    gsap.set(".headers", { yPercent: 0 });
   });
+
   return (
     <>
-      <section id="our_process">
+      <section id="our_process" ref={processSection}>
         <div className="process_wrapper flex justify-between">
           <div className="left w-1/2 h-screen flex items-center">
             <div className="process_left_content_wrapper pl-[140px] ">
               <h2 className="text-[48px] font-semibold ">Our Process</h2>
-              <div className="headings  h-[80px] bg-red-400 overflow-y-hidden">
+              <div className="headings  h-[80px] overflow-y-hidden">
                 <div className="headers">
                   {processes.map((process) => {
                     return (
@@ -108,13 +124,13 @@ const Process = () => {
               {processes.map((process, index) => {
                 return (
                   <div
-                    key={index}
-                    className="right-content h-screen items-center border-l-2 border-black  flex pt-[45%]"
+                    key={process.title + index}
+                    className="right-content h-screen items-center border-l-2 border-black  flex pt-[45%] last:mb-[105px]"
                   >
-                    <ul className=" testing ml-[60px] flex flex-col gap-y-[32px] bg-red-500">
+                    <ul className=" testing ml-[60px] flex flex-col  gap-y-[32px] ">
                       {process.points.map((point, index) => {
                         return (
-                          <li key={index} className=" text-[32px] ">
+                          <li key={point} className=" text-[32px] ">
                             {point}
                           </li>
                         );
