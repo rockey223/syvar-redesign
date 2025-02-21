@@ -110,10 +110,10 @@ const Process = () => {
     <section id="our_process" ref={processSection}>
       <div className="process_wrapper bg-white flex flex-col lg:flex-row lg:justify-between">
         {/* Left Section */}
-        <div className="left w-full lg:w-1/2 xl:w-1/2 lg:h-screen flex items-center bg-red-500">
+        <div className="left w-full lg:w-1/2 xl:w-1/2 lg:h-screen flex pt-[60px]">
           <div className="process_left_content_wrapper xl:pl-[120px] lg:pl-[60px]">
             <h2 className="text-[48px] font-semibold">Our Process</h2>
-            <div className="headings hidden lg:block h-[50px] overflow-y-hidden bg-yellow-600">
+            <div className="headings hidden lg:block h-[50px] overflow-y-hidden ">
               <div className="headers">
                 {processes.map((process, index) => (
                   <h1
@@ -132,7 +132,7 @@ const Process = () => {
         </div>
 
         {/* Right Section */}
-        <div className="right w-full lg:w-3/6 xl:w-1/2 bg-blue-00">
+        <div className="right w-full lg:w-3/6 xl:w-1/2 ">
           <div className="right-content-wrapper">
             {processes.map((process, index) => (
               <div
