@@ -7,6 +7,13 @@ export default {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        // 24 column grid
+        '24': 'repeat(24, minmax(0, 1fr))',
+      },
+      gridColumn: {
+        'span-20': 'span 20 / span 20', // Allows col-span-20
+      },
       colors: {
         blue: {
           0: "var(--color-blue-0)",
