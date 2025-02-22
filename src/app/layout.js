@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
         <LenisProvider>
           {children}
 
-          {/* <Footer /> */}
+          <Footer />
         </LenisProvider>
         {/* {children} */}
       </body>

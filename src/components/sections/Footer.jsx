@@ -1,17 +1,46 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import String from "../String";
+import Link from "next/link";
 
 const Footer = () => {
+  const [isCenter, setIsCenter] = useState(false);
+  const hover = () => {
+    setIsCenter(true);
+  };
+  const nothover = () => {
+    setIsCenter(false);
+  };
   return (
-    <div 
-        className='relative h-[800px]'
-        style={{clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)"}}
-    >
-        <div className='relative h-[calc(100vh+800px)] -top-[100vh]  bg-black'>
-            <div className='h-[800px] sticky top-[calc(100vh-800px)]'>
-                <p className="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos ipsum architecto et vitae ab ducimus fuga placeat dolorem eligendi neque itaque accusantium perspiciatis, ad expedita labore omnis ullam laudantium obcaecati, nostrum iusto. Tempora est quibusdam eligendi maiores tenetur sapiente assumenda deleniti eius, in iusto modi iure fugit laborum quis placeat asperiores facilis corrupti accusantium commodi quam. Velit nostrum, rem officiis earum ex repellendus, beatae quidem voluptatem sit recusandae quae perspiciatis libero? Illum alias a expedita facilis, nulla esse debitis perferendis animi fuga fugit voluptates adipisci facere natus laborum, eum corporis iusto explicabo inventore nam sunt? Fugit asperiores, ex hic dicta suscipit aliquid sapiente mollitia atque minus delectus quas quo exercitationem tenetur debitis consequuntur velit, enim recusandae rem doloremque eos temporibus aliquam unde obcaecati explicabo? Excepturi error laborum aperiam quasi veritatis, unde rem, incidunt, officiis saepe voluptas reiciendis? Alias dignissimos, corporis distinctio sint possimus nulla vero vitae officiis, ex perspiciatis perferendis. Voluptatem earum accusantium dolores voluptates. Aspernatur, maiores ratione facilis debitis quos dignissimos assumenda perferendis numquam, placeat dolores magni sit magnam ut est. Fugit facilis sunt tenetur omnis nam. Corporis, minima. Debitis error sunt quam nobis quas amet porro fugit. Illo, eveniet! Suscipit ipsum corporis error debitis officia non possimus officiis necessitatibus illum fuga, illo nihil dolores porro adipisci? Assumenda doloribus quisquam officiis blanditiis inventore odit dolores expedita voluptate! Labore pariatur nesciunt quidem alias iste, quas deleniti quaerat perferendis hic aliquid expedita aliquam obcaecati reprehenderit ex at dicta ducimus. Soluta cumque pariatur odit velit, minus tempore doloribus dolore consequuntur exercitationem, nam at, incidunt natus molestiae? Dicta nulla consequuntur saepe aut id, deleniti ipsa rem dignissimos, ducimus placeat in minus corrupti. Dolores expedita nesciunt nisi aut id temporibus provident impedit odit possimus, et modi quia perspiciatis quisquam rerum voluptates ipsa. Vel sunt provident fuga maxime neque facere nam harum sequi incidunt. Quaerat excepturi impedit tenetur consequatur, doloremque sed ex ullam veritatis velit! Quis illum repellendus dolore sapiente doloremque officiis assumenda modi voluptates sed eum ut aut quasi iste, eius asperiores temporibus, obcaecati, provident qui incidunt sit voluptatem veniam labore. Incidunt, in? Laudantium maiores temporibus accusamus doloribus cumque officiis, molestiae sed in vero neque! Omnis, repellat, ducimus in ea facilis nihil ipsum inventore assumenda fugit eligendi dolorum. Aspernatur quis consequatur corrupti accusantium tempora similique fugit, ullam velit libero doloribus ea sunt magnam incidunt quidem tenetur excepturi. Placeat quis obcaecati laudantium, ratione, aut velit rerum nemo corrupti omnis dignissimos magni labore numquam architecto officia?</p>
-            </div>
+    <>
+      <div className="mb-[100vh]" />
+      <section className="h-screen bg-black w-[100.01%] fixed bottom-0 right-1/2 translate-x-1/2 -z-10 px-[30px] lg:px-[60px] xl:px-[140px] py-[100px]">
+        <div className="footer_header">
+          <h1 className="text-[38px] xl:text-[64px] text-white font-bold">
+            Syvar technology
+          </h1>
         </div>
-    </div>
+        <div className="spacer mt-[30px]" />
+        <String />
+        <div className="spacer mt-[30px]" />
+        <div className="footer_contact flex flex-col md:flex-row gap-y-[30px] gap-x-[88px] text-white">
+          <Link href={"/"} className="text-xl md:text-2xl">
+            +977 9843636520
+          </Link>
+          <Link href={"/"} className="text-xl md:text-2xl">
+            info@syvartech.com.np
+          </Link>
+        </div>
+        <Link href={"#"} scroll={false} className="block group h-[250px] relative footer_master_btn text-white mx-auto w-3/4 mt-[100px] text-[94px] cursor-pointer ">
+          <div className=" w-auto absolute  top-0 left-0 group-hover:left-1/2 group-hover:-translate-x-1/2 transition-all duration-500">
+            Let's Work
+          </div>
+          <div className="inline-block absolute bottom-0 right-0 group-hover:right-1/2 group-hover:translate-x-1/2 transition-all duration-500">
+            Together
+          </div>
+        </Link>
+      </section>
+    </>
   );
 };
 
