@@ -15,22 +15,21 @@ const useWindowWidth = () => {
   useEffect(() => {
     if (typeof window === "undefined") return; // Skip during SSR
 
-    console.log("Setting up resize event listener"); // Debugging
+  
 
     const handleResize = () => {
-      console.log("Window resized:", window.innerWidth); // Debugging
+      
       setWidth(window.innerWidth);
     };
 
-    // Attach the event listener
     window.addEventListener("resize", handleResize);
 
-    // Call handleResize immediately to set the initial width
+   
     handleResize();
 
-    // Cleanup: Remove the event listener when the component unmounts
+   
     return () => {
-      console.log("Cleaning up resize event listener"); // Debugging
+
       window.removeEventListener("resize", handleResize);
     };
   }, []);
