@@ -70,8 +70,8 @@ const handleOut = () => {
 };
   return (
     <>
-      <div className="mb-[100vh]" />
-      <section className="h-screen bg-black w-[100.01%] fixed bottom-0 right-1/2 translate-x-1/2 -z-10 px-[30px] lg:px-[60px] xl:px-[140px] py-[80px]">
+      <div className="max-mb-[900px] mb-[900px]" />
+      <section className=" max-h-[900px] h-screen bg-black w-[100.01%] fixed bottom-0 right-1/2 translate-x-1/2 -z-10 px-[30px] lg:px-[60px] xl:px-[140px] py-[80px]">
         <div className="footer_header">
           <h1 className="text-[32px] xl:text-[64px] text-white font-bold">
             Syvar technology
@@ -129,7 +129,7 @@ const handleOut = () => {
             </Link>
           </div>
         </div>
-      <div className="absolute bottom-0 w-full mb-[20px] gap-y-[10px] h-[60px] px-[30px] lg:px-[60px] xl:px-[140px] text-gray-200 flex flex-col md:flex-row items-center md:justify-between">
+      <div className="absolute bottom-0 left-0 w-full mb-[20px] gap-y-[10px] h-[60px] text-gray-200 flex flex-col md:flex-row items-center md:justify-between px-[30px] lg:px-[60px] xl:px-[140px]">
         <p className=" text-sm md:text-xl">
           All right reserved 2025 &copy; Syvar Technology
         </p>

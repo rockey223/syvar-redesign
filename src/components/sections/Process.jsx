@@ -125,7 +125,7 @@ const Process = () => {
     <section id="our_process" ref={processSection}>
       <div className="process_wrapper bg-white flex flex-col lg:flex-row lg:justify-between max-lg:px-[30px]">
         {/* Left Section */}
-        <div className="left w-full lg:w-1/2 xl:w-1/2 lg:h-screen flex pt-[60px]">
+        <div className="left w-full lg:w-1/2 xl:w-1/2 max-h-[900px] lg:h-screen flex pt-[60px]">
           <div className="process_left_content_wrapper xl:pl-[120px] lg:pl-[60px]">
             <h2 className="font-semibold text-[2.5rem] md:text-[3.5rem]  mb-[20px]">
               Our Process
