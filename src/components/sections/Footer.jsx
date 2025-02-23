@@ -6,6 +6,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import MagneticIcon from "../MagneticIcon";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 const socialMediaIcons = [
   {
     title: "",
@@ -26,6 +27,10 @@ const socialMediaIcons = [
   //   },
 ];
 
+
+
+const Footer = () => {
+  
 const handleIn = () => {
   const tl = gsap.timeline();
 
@@ -63,8 +68,6 @@ const handleOut = () => {
     "<"
   );
 };
-
-const Footer = () => {
   return (
     <>
       <div className="mb-[100vh]" />
@@ -126,8 +129,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-      </section>
-      <div className="w-full mb-[20px] gap-y-[10px] h-[60px] px-[30px] lg:px-[60px] xl:px-[140px] text-gray-200 flex flex-col md:flex-row items-center md:justify-between">
+      <div className="absolute bottom-0 w-full mb-[20px] gap-y-[10px] h-[60px] px-[30px] lg:px-[60px] xl:px-[140px] text-gray-200 flex flex-col md:flex-row items-center md:justify-between">
         <p className=" text-sm md:text-xl">
           All right reserved 2025 &copy; Syvar Technology
         </p>
@@ -135,6 +137,7 @@ const Footer = () => {
           <Link href={"/"}>Privacy Policy</Link>
         </p>
       </div>
+      </section>
     </>
   );
 };
