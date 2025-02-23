@@ -6,7 +6,21 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
+    extend: {keyframes: {
+      'ease-out-elastic': {
+        '0%': { transform: 'translateY(0%)' },
+        '16%': { transform: 'translateY(-132.27%)' },
+        '28%': { transform: 'translateY(-86.88%)' },
+        '44%': { transform: 'translateY(-104.63%)' },
+        '59%': { transform: 'translateY(-98.36%)' },
+        '73%': { transform: 'translateY(-100.58%)' },
+        '88%': { transform: 'translateY(-99.8%)' },
+        '100%': { transform: 'translateY(-100%)' },
+      },
+    },
+    animation: {
+      'ease-out-elastic': 'ease-out-elastic 1s ease-out',
+    },
       gridTemplateColumns: {
         // 24 column grid
         '24': 'repeat(24, minmax(0, 1fr))',

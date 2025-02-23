@@ -27,47 +27,44 @@ const socialMediaIcons = [
   //   },
 ];
 
-
-
 const Footer = () => {
-  
-const handleIn = () => {
-  const tl = gsap.timeline();
+  const handleIn = () => {
+    const tl = gsap.timeline();
 
-  tl.to(".hello", {
-    y: -120,
-    duration: 1.5,
-    ease: "elastic.out(1,0.5)",
-  }).to(
-    ".bye",
-    {
-      duration: 1.5,
+    tl.to(".hello", {
+      y: -120,
+      duration: 1,
       ease: "elastic.out(1,0.5)",
+    }).to(
+      ".bye",
+      {
+        duration: 1,
+        ease: "elastic.out(1,0.5)",
 
+        y: -120,
+      },
+      "<"
+    );
+  };
+
+  const handleOut = () => {
+    const tl = gsap.timeline();
+
+    tl.to(".hello", {
+      duration: 1,
+      ease: "elastic.out(1,0.5)",
       y: 0,
-    },
-    "<"
-  );
-};
+    }).to(
+      ".bye",
+      {
+        duration: 1,
+        ease: "elastic.out(1,0.5)",
 
-const handleOut = () => {
-  const tl = gsap.timeline();
-
-  tl.to(".hello", {
-    duration: 1.5,
-    ease: "elastic.out(1,0.5)",
-    y: 0,
-  }).to(
-    ".bye",
-    {
-      duration: 1.5,
-      ease: "elastic.out(1,0.5)",
-
-      y: 120,
-    },
-    "<"
-  );
-};
+        y: 120,
+      },
+      "<"
+    );
+  };
   return (
     <>
       <div className="max-mb-[900px] mb-[900px]" />
@@ -109,34 +106,37 @@ const handleOut = () => {
               );
             })}
           </div>
-          <div className="contact_link h-[120px] w-full md:w-3/4 flex max-lg:items-center">
+          <div
+            className="contact_link h-[120px] w-full md:w-3/4 flex lg:justify-end 
+          md:justify-center max-lg:items-center"
+          >
             <Link
               href={""}
-              className="h-full w-full text-white text-5xl lg:text-8xl text-center"
+              className="h-full  text-white text-5xl lg:text-8xl text-center"
             >
               <div
                 className="h-full w-full relative overflow-hidden"
                 onMouseEnter={handleIn}
                 onMouseLeave={handleOut}
               >
-                <p className="absolute hello h-full w-full  flex justify-center items-center ">
+                <p className=" hello h-full w-full  flex justify-center items-center ">
                   Got A Project?
                 </p>
-                <p className="bye absolute translate-y-[120px]  flex justify-center items-center h-full w-full ">
+                <p className="bye    flex justify-center items-center h-full w-full ">
                   Let's Do It!
                 </p>
               </div>
             </Link>
           </div>
         </div>
-      <div className="absolute bottom-0 left-0 w-full mb-[20px] gap-y-[10px] h-[60px] text-gray-200 flex flex-col md:flex-row items-center md:justify-between px-[30px] lg:px-[60px] xl:px-[140px]">
-        <p className=" text-sm md:text-xl">
-          All right reserved 2025 &copy; Syvar Technology
-        </p>
-        <p className="text-sm md:text-xl">
-          <Link href={"/"}>Privacy Policy</Link>
-        </p>
-      </div>
+        <div className="absolute bottom-0 left-0 w-full mb-[20px] gap-y-[10px] h-[60px] text-gray-200 flex flex-col md:flex-row items-center md:justify-between px-[30px] lg:px-[60px] xl:px-[140px]">
+          <p className=" text-sm md:text-xl">
+            All right reserved 2025 &copy; Syvar Technology
+          </p>
+          <p className="text-sm md:text-xl">
+            <Link href={"/"}>Privacy Policy</Link>
+          </p>
+        </div>
       </section>
     </>
   );
