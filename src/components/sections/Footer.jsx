@@ -69,7 +69,7 @@ const Footer = () => {
       "<"
     );
   };
-const lenis = new Lenis()
+
   const dispatch = useDispatch()
   return (
     <>
@@ -119,7 +119,7 @@ const lenis = new Lenis()
             <Link
               href={""}
               onClick={()=>{dispatch(show());
-                lenis.stop()
+              
               }}
               scroll={false}
               className="h-full  text-white text-5xl lg:text-8xl text-center"

@@ -13,21 +13,19 @@ gsap.registerPlugin(useGSAP);
 const LenisProvider = ({ children }) => {
   const contactContent = useRef(null);
   const bgRef = useRef(null);
-  const lenis = new Lenis({
-    autoRaf: true,
-    prevent: (node) => node.id === "modal"
-     
-  });
-  // useEffect(() => {
-  //   // Initialize Lenis
+  useEffect(() => {
+    const lenis = new Lenis({
+      autoRaf: true,
+    });
+    // Initialize Lenis
 
-  //   function raf(time) {
-  //     lenis.raf(time);
-  //     requestAnimationFrame(raf);
-  //   }
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
 
-  //   requestAnimationFrame(raf);
-  // }, []);
+    requestAnimationFrame(raf);
+  }, []);
   const displayContact = useSelector((state) => state.contact.displayButton);
 
   // const [displayContact, setDisplayContact] = useState();
@@ -61,12 +59,7 @@ const LenisProvider = ({ children }) => {
   };
   useGSAP(() => {
     if (displayContact) {
-      const tl = gsap.timeline({
-        onComplete: () => {
-          lenis.stop();
-        },
-      });
-    
+      const tl = gsap.timeline();
 
       tl.fromTo(
         contactContent.current,
