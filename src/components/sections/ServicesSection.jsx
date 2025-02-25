@@ -33,7 +33,7 @@ const ServicesSection = () => {
             <p className="max-w-[756px] text-blue-0 text-center text-xl md:px-4">
             We simplify the complex by breaking it down into clear, actionable steps. Our approach ensures efficiency, quality, and a seamless experience for you.
             </p>
-            <button className="px-5 py-[10px] flex items-center justify-center border-[4px] border-gray-200 text-gray-900 bg-gray-200 rounded-full font-semibold text-xl">More About Services</button>
+            {/* <button className="px-5 py-[10px] flex items-center justify-center border-[4px] border-gray-200 text-gray-900 bg-gray-200 rounded-full font-semibold text-xl">More About Services</button> */}
         </div>
       </div>
     </section>

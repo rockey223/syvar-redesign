@@ -37,7 +37,7 @@ const LenisProvider = ({ children }) => {
       const tl = gsap.timeline({
         onComplete: () => {
           dispatch(hide());
-          lenis.start();
+          
         },
       });
 
