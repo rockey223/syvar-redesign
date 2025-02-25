@@ -1,24 +1,106 @@
-'use client'
+"use client";
+import Contact from "@/components/Contact";
 import Lenis from "lenis";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { Provider, useDispatch, useSelector } from "react-redux";
+import { store } from "@/app/store";
+import { hide, show } from "./contactSlice";
 
-const LenisProvider = ({children}) => {
-    useEffect(() => {
-    // Initialize Lenis
-    const lenis = new Lenis({
-      autoRaf: true,
-    });
-    console.log(lenis);
-    
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+gsap.registerPlugin(useGSAP);
+
+const LenisProvider = ({ children }) => {
+  const contactContent = useRef(null);
+  const bgRef = useRef(null);
+  const lenis = new Lenis({
+    autoRaf: true,
+    prevent: (node) => node.id === "modal"
+     
+  });
+  // useEffect(() => {
+  //   // Initialize Lenis
+
+  //   function raf(time) {
+  //     lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  //   }
+
+  //   requestAnimationFrame(raf);
+  // }, []);
+  const displayContact = useSelector((state) => state.contact.displayButton);
+
+  // const [displayContact, setDisplayContact] = useState();
+  const dispatch = useDispatch();
+
+  // const lenis = new Lenis();
+  const closeContact = () => {
+    if (contactContent.current && bgRef.current) {
+      const tl = gsap.timeline({
+        onComplete: () => {
+          dispatch(hide());
+          lenis.start();
+        },
+      });
+
+      tl.to(
+        contactContent.current,
+        {
+          opacity: 0,
+          scale: 0,
+          x: "100%",
+          duration: 0.5,
+        },
+        ">"
+      );
+
+      tl.to(bgRef.current, { opacity: 0, duration: 0.5 }, "<");
+    } else {
+      dispatch(hide());
     }
+  };
+  useGSAP(() => {
+    if (displayContact) {
+      const tl = gsap.timeline({
+        onComplete: () => {
+          lenis.stop();
+        },
+      });
+    
 
-    requestAnimationFrame(raf);
+      tl.fromTo(
+        contactContent.current,
+        {
+          opacity: 0,
+          scale: 0,
+          x: "100%",
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          x: 0,
+          duration: 0.5,
+        },
+        "<"
+      );
+      gsap.fromTo(bgRef.current, { opacity: 0 }, { opacity: 1, duration: 0.5 });
+    }
+  }, [displayContact]);
 
-  }, []);
-  return <>{children}</>;
+  return (
+    <>
+      {children}
+      {displayContact ? (
+        <Contact
+          ref={contactContent}
+          bgRef={bgRef}
+          closeContact={closeContact}
+        />
+      ) : null}
+
+      {/*  */}
+    </>
+  );
 };
 
 export default LenisProvider;

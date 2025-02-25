@@ -7,6 +7,10 @@ import { RiInstagramFill } from "react-icons/ri";
 import MagneticIcon from "../MagneticIcon";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { handleContact } from "@/utils/LenisProvider";
+import { useDispatch } from "react-redux";
+import { show } from "@/utils/contactSlice";
+import Lenis from "lenis";
 const socialMediaIcons = [
   {
     title: "",
@@ -65,6 +69,8 @@ const Footer = () => {
       "<"
     );
   };
+const lenis = new Lenis()
+  const dispatch = useDispatch()
   return (
     <>
       <div className="max-mb-[900px] mb-[900px]" />
@@ -112,6 +118,10 @@ const Footer = () => {
           >
             <Link
               href={""}
+              onClick={()=>{dispatch(show());
+                lenis.stop()
+              }}
+              scroll={false}
               className="h-full  text-white text-5xl lg:text-8xl text-center"
             >
               <div

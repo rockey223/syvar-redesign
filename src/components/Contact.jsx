@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MagneticIcon from "./MagneticIcon";
 import Link from "next/link";
 
@@ -12,7 +12,7 @@ const services = [
 ];
 const budgets = ["Under $5k", "$5k-$10k", "$10k-$20k", "$20k-$50k", "$50k+"];
 
-const Contact = () => {
+const Contact = ({ref,bgRef,closeContact}) => {
   
   const [selectedServices, setSelectedServices] = useState([]);
 
@@ -25,13 +25,16 @@ const Contact = () => {
     );
   };
 
+
+
   return (
     <>
-      <div data-lenis-prevent className="fixed top-0 left-0 right-0 bottom-0 backdrop-blur-md dark w-screen h-screen bg-[#000c] opacity-100 z-10 pointer-events-auto" />
-      <div data-lenis-prevent className="contact-content bg-white w-[calc(100%-2rem)] md:max-w-[50vw] lg:max-w-[49rem] z-20 rounded-2xl md:rounded-lg md:pt-[1.5rem] pt-4 px-4 pb-8 md:px-[2rem] md:pb-[4rem]  max-h-[calc(100%-2rem)] bottom-auto overflow-y-auto fixed right-4 top-4 origin-[center_right] shadow-[0_10px_38px_-10px_#0e121659,0_10px_20px_-15px_#0e12163] pointer-events-auto" role="dialog">
+      <div ref={bgRef} className="fixed top-0 left-0 right-0 bottom-0 backdrop-blur-md dark w-screen h-screen bg-[#000c] opacity-100 z-10 pointer-events-auto" />
+      <div  ref={ref} data-lenis-prevent id="modal" className="contact-content bg-white w-[calc(100%-2rem)] md:max-w-[50vw] lg:max-w-[49rem] z-20 rounded-2xl md:rounded-lg md:pt-[1.5rem] pt-4 px-4 pb-8 md:px-[2rem] md:pb-[4rem]  max-h-[calc(100%-2rem)] bottom-auto overflow-y-auto fixed right-4 top-4 origin-[center_right] shadow-[0_10px_38px_-10px_#0e121659,0_10px_20px_-15px_#0e12163] pointer-events-auto" role="dialog">
         {/* close btn */}
         <div className="sticky flex top-0 items-center justify-end pointer-events-none">
           <button
+          onClick={closeContact}
             type="button"
             className="flex items-center bg-black text-white justify-center pointer-events-auto transition-all duration-200 ease-linear rounded-full h-7 w-7 md:h-8 md:w-8"
             aria-label="Close"
