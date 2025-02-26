@@ -40,7 +40,7 @@ const FeaturedWorks = () => {
           <h2 className="col-span-4 lg:col-span-4 xl:col-span-10 font-semibold text-[2.5rem] md:text-[3.5rem]">
             Featured works
           </h2>
-          <button
+          {/* <button
             className="col-span-4 lg:col-span-4 xl:col-span-2 justify-self-start lg:justify-self-end text-gray-600 text-xl 
           relative 
           "
@@ -48,7 +48,7 @@ const FeaturedWorks = () => {
             <span className=" relative before:w-0 transition-all before:absolute before:bg-gray-600 before:h-[2px] hover:before:w-full before:-bottom-1 before:left-0 before:duration-100 before:ease-linear">
               more works
             </span>
-          </button>
+          </button> */}
         </div>
         <div className="w-full py-20 grid grid-cols-4 lg:grid-cols-8 xl:grid-cols-12 l gap-5 gap-y-[100px]  md:gap-y-[140px]">
           {featuredWorks.map((work, index) => (

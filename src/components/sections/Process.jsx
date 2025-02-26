@@ -15,21 +15,15 @@ const useWindowWidth = () => {
   useEffect(() => {
     if (typeof window === "undefined") return; // Skip during SSR
 
-  
-
     const handleResize = () => {
-      
       setWidth(window.innerWidth);
     };
 
     window.addEventListener("resize", handleResize);
 
-   
     handleResize();
 
-   
     return () => {
-
       window.removeEventListener("resize", handleResize);
     };
   }, []);
@@ -76,7 +70,6 @@ const processes = [
 ];
 
 const Process = () => {
- 
   const width = useWindowWidth();
   const processSection = useRef();
 
@@ -161,7 +154,7 @@ const Process = () => {
                 >
                   {/* <div className="absolute w-[3px] bg-red-700 border-4 border-red-400 h-full"></div> */}
                   <div className="m_heading lg:hidden text-xl md:text-3xl mb-2 font-semibold">
-                    {process.title}
+                    {`0${index + 1} ${process.title}`}
                   </div>
                   <ul className="testing lg:ml-[10px] xl:ml-[60px] flex flex-col lg:gap-y-[32px] mb-[30px] relative before:absolute before:h-full before:w-[2px] before:hidden lg:before:block before:bg-[linear-gradient(180deg,rgba(217,217,217,0)_0%,#000_25%,#000_75%,rgba(0,0,0,0)_100%)] before:-left-4">
                     {process.points.map((point, index) => (

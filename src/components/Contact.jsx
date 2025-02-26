@@ -33,7 +33,7 @@ const Contact = ({ ref, bgRef, closeContact }) => {
         ref={ref}
         data-lenis-prevent
         id="modal"
-        className="contact-content bg-white w-[calc(100%-2rem)] md:max-w-[50vw] lg:max-w-[49rem] z-20 rounded-2xl md:rounded-lg md:pt-[1.5rem] pt-4 px-4 pb-8 md:px-[2rem] md:pb-[4rem]  max-h-[calc(100%-2rem)] bottom-auto overflow-y-auto fixed right-4 top-4 origin-[center_right] shadow-[0_10px_38px_-10px_#0e121659,0_10px_20px_-15px_#0e12163] pointer-events-auto"
+        className="contact-content bg-white w-[calc(100%-2rem)]  lg:max-w-[44rem] z-20 rounded-2xl md:rounded-lg md:pt-[1.5rem] pt-4 px-4 pb-8 md:px-[2rem] md:pb-[4rem]  max-h-[calc(100%-2rem)] bottom-auto overflow-y-auto fixed right-4 top-4 origin-[center_right] shadow-[0_10px_38px_-10px_#0e121659,0_10px_20px_-15px_#0e12163] pointer-events-auto"
         role="dialog"
       >
         {/* close btn */}
@@ -124,7 +124,7 @@ const Contact = ({ ref, bgRef, closeContact }) => {
                 <legend className="text-lg max-sm:leading-6 md:text-[22.5px] mb-0">
                   Your Information
                 </legend>
-                <div className="flex flex-col gap-[5px] gap-y-4 lg:flex-row lg:gap-[20px] mb-2 mt-3">
+                <div className="flex flex-col gap-[5px] gap-y-4 md:flex-row lg:gap-[20px] mb-2 mt-3">
                   <div className="w-full">
                     <input
                       type="text"
@@ -164,7 +164,7 @@ const Contact = ({ ref, bgRef, closeContact }) => {
               <div className="px-4 py-2 inline-flex"> Submit</div>
             </button>
           </form>
-          <div className="pt-3 mt-8 border-t-2  text-black border-gray-200">
+          {/* <div className="pt-3 mt-8 border-t-2  text-black border-gray-200">
             or send us an{" "}
             <Link
               href={"/"}
@@ -172,7 +172,7 @@ const Contact = ({ ref, bgRef, closeContact }) => {
             >
               email
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

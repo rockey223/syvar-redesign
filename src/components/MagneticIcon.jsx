@@ -27,11 +27,11 @@ const MagneticIcon = ({ children }) => {
       yTo(0);
     };
 
-    ref.current.addEventListener("mousemove", mouseMove);
-    ref.current.addEventListener("mouseleave", mouseLeave);
+    ref.current?.addEventListener("mousemove", mouseMove);
+    ref.current?.addEventListener("mouseleave", mouseLeave);
     return () => {
-      ref.current.removeEventListener("mousemove", mouseMove);
-      ref.current.removeEventListener("mouseleave", mouseLeave);
+      ref.current?.removeEventListener("mousemove", mouseMove);
+      ref.current?.removeEventListener("mouseleave", mouseLeave);
     };
   }, []);
 
