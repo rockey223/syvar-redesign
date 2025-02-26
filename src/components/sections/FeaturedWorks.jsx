@@ -1,6 +1,6 @@
 import React from "react";
 import WorkCard from "../WorkCard";
-
+import projectData from "@/data/projectData.json";
 const featuredWorks = [
   {
     projectName: "Jina Alchemy",
@@ -51,7 +51,7 @@ const FeaturedWorks = () => {
           </button> */}
         </div>
         <div className="w-full py-20 grid grid-cols-4 lg:grid-cols-8 xl:grid-cols-12 l gap-5 gap-y-[100px]  md:gap-y-[140px]">
-          {featuredWorks.map((work, index) => (
+          {projectData.map((work, index) => (
             <WorkCard work={work} index={index} key={index} />
           ))}
         </div>

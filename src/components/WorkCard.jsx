@@ -60,7 +60,7 @@ const WorkCard = ({ work, index }) => {
         {/* Custom Cursor */}
         <div
           ref={cursorRef}
-          className="cursor h-[100px] w-[100px] bg-[rgba(0,0,0,0.5)] flex justify-center items-center text-white font-bold absolute z-10 scale-0  transition-all  ease-linear rounded-full opacity-0 group-hover:opacity-100  group-hover:scale-100 pointer-events-none"
+          className="cursor hidden  h-[100px] w-[100px] bg-[rgba(0,0,0,0.5)] lg:flex justify-center items-center text-white font-bold absolute z-10 scale-0  transition-all  ease-linear rounded-full opacity-0 group-hover:opacity-100  group-hover:scale-100 pointer-events-none"
         >
           View more
         </div>
@@ -68,7 +68,7 @@ const WorkCard = ({ work, index }) => {
         {/* Image */}
         <Image
           style={{ transform: "translateY(0%)" }}
-          src={work.image}
+          src={work.thumbnail}
           className={`featured_image${index} h-[690px] md:h-[800px] scale-50
           aspect-video md:aspect-auto w-full object-cover`}
           width={1500}
@@ -84,7 +84,7 @@ const WorkCard = ({ work, index }) => {
           <span className="text-[14px] md:text-[20px]">{`"${work.tagLine}"`}</span>
         </h3>
         <p className="text-base text-gray-600 font-medium">
-          {work.tasks.join(", ")}
+          {work.services.join(", ")}
         </p>
       </div>
     </Link>

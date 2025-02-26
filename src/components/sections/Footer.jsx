@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import String from "../String";
 import Link from "next/link";
 import { FaFacebookF } from "react-icons/fa";
@@ -32,7 +32,11 @@ const socialMediaIcons = [
 ];
 
 const Footer = () => {
+
+
+
   const handleIn = () => {
+
     const tl = gsap.timeline();
 
     tl.to(".hello", {
@@ -70,7 +74,7 @@ const Footer = () => {
     );
   };
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   return (
     <>
       <div className="max-mb-[900px] mb-[900px]" />
@@ -118,8 +122,8 @@ const Footer = () => {
           >
             <Link
               href={""}
-              onClick={()=>{dispatch(show());
-              
+              onClick={() => {
+                dispatch(show());
               }}
               scroll={false}
               className="h-full  text-white text-5xl lg:text-8xl text-center"

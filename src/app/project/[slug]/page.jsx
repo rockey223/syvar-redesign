@@ -3,14 +3,23 @@ import Link from "next/link";
 import { IoArrowBack } from "react-icons/io5";
 import React from "react";
 import MagneticIcon from "@/components/MagneticIcon";
+import projectData from "@/data/projectData.json";
+
+const getData = async (id) => {
+  return projectData.find((project) => {
+    return project.id === id;
+  });
+};
 
 const page = async ({ params }) => {
-  console.log(await params);
+  const id = await params;
+  const project = await getData(id.slug);
+  console.log(project);
 
   return (
     <>
       <div className="page-wrapper px-[20px] bg-white w-full md:px-[60px] xl:px-[140px] min-h-[100vh]">
-        <div className="project-heading grid grid-cols-4 w-full lg:grid-cols-12 py-[100px] bg-white">
+        <div className="project-heading grid grid-cols-4 w-full lg:grid-cols-12 lg:py-[100px] bg-white">
           <Link
             href={"/"}
             className="back col-start-1 col-end-4 hidden lg:flex justify-center items-center text-2xl"
@@ -22,7 +31,7 @@ const page = async ({ params }) => {
               <IoArrowBack />
             </div>
           </Link>
-          <div className="header col-span-full lg:col-start-4 lg:col-end-13 w-full bg-white py-[60px]">
+          <div className="header col-span-full lg:col-start-4 lg:col-end-13 w-full bg-white py-[0px] lg:py-[60px]">
             <div className="heading text-5xl leading-tight lg:text-8xl font-bold w-full 2xl:w-2/3">
               Jina Alchemy alchemy
             </div>
@@ -39,7 +48,7 @@ const page = async ({ params }) => {
               </p>
               <MagneticIcon>
                 <Link
-                  href={"/"}
+                  href={project.link}
                   className="mr-9 h-[100px] w-[100px] border-[1px] flex justify-center items-center rounded-full border-gray-600 text-gray-950 hover:bg-blue-200 hover:border-none transition-colors duration-300 ease-in-out hover:text-white"
                 >
                   Visit Site
@@ -56,58 +65,44 @@ const page = async ({ params }) => {
                   Services provided
                 </h3>
                 <ul className=" mt-4 text-gray-800">
-                  <li className="text-xl">UI UX designing</li>
-                  <li className="text-xl">UI UX designing</li>
-                  <li className="text-xl">UI UX designing</li>
-                  <li className="text-xl">UI UX designing</li>
-                  <li className="text-xl">UI UX designing</li>
+                  {
+                    project.services.map((service)=>{
+                      return (
+
+                        <li key={service} className="text-xl">{service}</li>
+                      )
+                    })
+                  }
+      
                 </ul>
               </div>
               <div className="mt-11">
                 <h3 className="project-services-heading text-2xl 2xl:text-4xl font-semibold ">
                   Duration
                 </h3>
-                <p className="mt-4 text-xl text-gray-800">2 months</p>
+                <p className="mt-4 text-xl text-gray-800">{project.duration}</p>
               </div>
             </div>
           </div>
           <div className="images pb-[100px] col-span-full max-lg:mt-7 lg:col-start-4 lg:col-end-13 w-full">
-            <div className="projectImages w-full">
+
+            {
+              project.images.map((image,index)=>{
+                return (
+
+            <div className="projectImages w-full" key={`${image} +  ${index}`}>
               <Image
-                src="/images/featured1.jpg"
+                src={image}
                 width={1000}
                 height={100}
                 alt="image"
                 className="w-full"
               />
             </div>
-            <div className="projectImages w-full">
-              <Image
-                src="/images/featured1.jpg"
-                width={1000}
-                height={100}
-                alt="image"
-                className="w-full"
-              />
-            </div>
-            <div className="projectImages w-full">
-              <Image
-                src="/images/featured1.jpg"
-                width={1000}
-                height={100}
-                alt="image"
-                className="w-full"
-              />
-            </div>
-            <div className="projectImages w-full">
-              <Image
-                src="/images/featured1.jpg"
-                width={1000}
-                height={100}
-                alt="image"
-                className="w-full"
-              />
-            </div>
+                )
+              })
+            }
+            
           </div>
         </div>
       </div>

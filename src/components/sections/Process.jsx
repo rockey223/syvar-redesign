@@ -116,7 +116,7 @@ const Process = () => {
 
   return (
     <section id="our_process" ref={processSection}>
-      <div className="process_wrapper bg-white flex flex-col lg:flex-row lg:justify-between max-lg:px-[30px]">
+      <div className="process_wrapper bg-white flex flex-col lg:flex-row lg:justify-between max-lg:px-[30px] ">
         {/* Left Section */}
         <div className="left w-full lg:w-1/2 xl:w-1/2 max-h-[900px] lg:h-screen flex pt-[60px]">
           <div className="process_left_content_wrapper xl:pl-[120px] lg:pl-[60px]">
@@ -144,30 +144,30 @@ const Process = () => {
         </div>
 
         {/* Right Section */}
-        <div className="right w-full lg:w-3/6 xl:w-1/2 max-lg:mt-[65px]">
-          <div className="right-content-wrapper">
+        <div className="right w-full lg:w-3/6 xl:w-1/2 max-lg:mt-[65px] ">
+          <div className="right-content-wrapper last:pb-[35vh]">
             {processes.map((process, index) => (
               <React.Fragment key={process.title + index}>
                 <div
                   key={process.title + index}
-                  className="right-content lg:py-[140px] relative"
+                  className="right-content lg:py-[140px] relative "
                 >
                   {/* <div className="absolute w-[3px] bg-red-700 border-4 border-red-400 h-full"></div> */}
                   <div className="m_heading lg:hidden text-xl md:text-3xl mb-2 font-semibold">
                     {`0${index + 1} ${process.title}`}
                   </div>
-                  <ul className="testing lg:ml-[10px] xl:ml-[60px] flex flex-col lg:gap-y-[32px] mb-[30px] relative before:absolute before:h-full before:w-[2px] before:hidden lg:before:block before:bg-[linear-gradient(180deg,rgba(217,217,217,0)_0%,#000_25%,#000_75%,rgba(0,0,0,0)_100%)] before:-left-4">
+                  <ul className="testing lg:ml-[10px] xl:ml-[60px] flex flex-col lg:gap-y-[32px] mb-[30px] relative before:absolute before:h-full before:w-[2px] before:hidden lg:before:block before:bg-[linear-gradient(180deg,rgba(217,217,217,0)_0%,#000_25%,#000_75%,rgba(0,0,0,0)_100%)] before:-left-4 ">
                     {process.points.map((point, index) => (
                       <li
                         key={point}
-                        className="text-lg lg:text-[28px] xl:text-[32px] leading-[32px]"
+                        className="text-lg lg:text-[28px] xl:text-[32px] leading-[32px] "
                       >
                         {point}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <hr className="Line" />
+                <hr className={`Line ${index === processes.length - 1 ? "hidden" : ''}`} />
               </React.Fragment>
             ))}
           </div>

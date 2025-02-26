@@ -1,10 +1,58 @@
 [
-    {
-        "projectName" : "Jina Alchemy",
-        "images": [],
-        "services": ["Re-designing", "development"],
-        "duration" : "1 month",
-        "thumbnail": "",
-        "Link": ""
-    }
+  {
+    "projectName": "Jina Alchemy",
+    "images": [
+      "/images/featured1.jpg",
+      "/images/featured1.jpg",
+      "/images/featured1.jpg",
+      "/images/featured1.jpg"
+    ],
+    "services": ["Re-designing", "development"],
+    "duration": "1 month",
+    "thumbnail": "/images/featured1.jpg",
+    "link": "https://jina-alchemy.com",
+    "id": "1"
+  },
+  {
+    "projectName": "Jina Alchemy",
+    "images": [
+      "/images/featured1.jpg",
+      "/images/featured1.jpg",
+      "/images/featured1.jpg",
+      "/images/featured1.jpg"
+    ],
+    "services": ["Re-designing", "development"],
+    "duration": "1 month",
+    "thumbnail": "/images/featured1.jpg",
+    "link": "https://jina-alchemy.com",
+    "id": "2"
+  },
+  {
+    "projectName": "Jina Alchemy",
+    "images": [
+      "/images/featured1.jpg",
+      "/images/featured1.jpg",
+      "/images/featured1.jpg",
+      "/images/featured1.jpg"
+    ],
+    "services": ["Re-designing", "development"],
+    "duration": "1 month",
+    "thumbnail": "/images/featured1.jpg",
+    "link": "https://jina-alchemy.com",
+    "id": "3"
+  },
+  {
+    "projectName": "Jina Alchemy",
+    "images": [
+      "/images/featured1.jpg",
+      "/images/featured1.jpg",
+      "/images/featured1.jpg",
+      "/images/featured1.jpg"
+    ],
+    "services": ["Re-designing", "development"],
+    "duration": "1 month",
+    "thumbnail": "/images/featured1.jpg",
+    "link": "https://jina-alchemy.com",
+    "id": "4"
+  }
 ]
