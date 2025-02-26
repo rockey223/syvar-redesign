@@ -1,6 +1,6 @@
 import React from "react";
 import WorkCard from "../WorkCard";
-import projectData from "@/data/projectData.json";
+import projectData from "@/data/ProjectData.json";
 const featuredWorks = [
   {
     projectName: "Jina Alchemy",

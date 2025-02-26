@@ -3,7 +3,7 @@ import Link from "next/link";
 import { IoArrowBack } from "react-icons/io5";
 import React from "react";
 import MagneticIcon from "@/components/MagneticIcon";
-import projectData from "@/data/projectData.json";
+import projectData from "@/data/ProjectData.json";
 
 const getData = async (id) => {
   return projectData.find((project) => {
