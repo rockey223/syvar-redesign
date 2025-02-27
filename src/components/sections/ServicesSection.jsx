@@ -19,7 +19,7 @@ const ServicesSection = () => {
             </h2>
           </div>
           <div className="services_list w-full xl:px-[138px] 2xl:px-[500px] mb-2 md:mb-5">
-            <ul className="w-full flex flex-wrap gap-x-5 md:gap-x-10 xl:gap-x-5 gap-y-10 items-center justify-center">
+            <ul className="w-full flex flex-wrap gap-x-5 md:gap-x-9 xl:gap-x-2 gap-y-8 items-center justify-center">
               {serviceList.map((service, index) => (
                 <li
                   key={index}
