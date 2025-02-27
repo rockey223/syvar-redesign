@@ -46,7 +46,7 @@ const page = async ({ params }) => {
                 <Link
                   href={project.link}
                    target="_blank"
-                  className="mr-9 h-[100px] w-[100px] border-[1px] flex justify-center items-center rounded-full border-gray-600 text-gray-950 hover:bg-blue-200 hover:border-none transition-colors duration-300 ease-in-out hover:text-white"
+                  className="mr-9 h-[100px] max-sm:mb-8 w-[100px] border-[1px] flex justify-center items-center rounded-full border-gray-600 text-gray-950 hover:bg-blue-200 hover:border-none transition-colors duration-300 ease-in-out hover:text-white"
                 >
                   Visit Site
                 </Link>
