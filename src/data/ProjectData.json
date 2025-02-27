@@ -2,29 +2,35 @@
   {
     "projectName": "Jina Alchemy",
     "images": [
-      "/images/featured1.jpg",
-      "/images/featured1.jpg",
-      "/images/featured1.jpg",
-      "/images/featured1.jpg"
+      "/images/jina1.jpg",
+      "/images/jina2.jpg",
+      "/images/jina3.jpg",
+      "/images/jina4.jpg",
+      "/images/jina5.jpg",
+      "/images/jina6.jpg"
     ],
+    "about": "Jina Alchemy began with a simple belief: true beauty flourishes when we work in harmony with nature's regenerative power. We believe healthy hair and radiant skin start with natural ingredients and traditional practices that support your body's inherent renewal processes. Today, Jina Alchemy offers a range of natural skincare and aromatherapeutic products, made in Nepal.",
     "services": ["Re-designing", "development"],
     "duration": "1 month",
     "thumbnail": "/images/featured1.jpg",
     "link": "https://jina-alchemy.com",
-    "id": "1"
+    "id": "1",
+    "slug": "Jina_Alchemy"
   },
   {
-    "projectName": "Jina Alchemy",
+    "projectName": "Viswa Consult",
     "images": [
       "/images/featured1.jpg",
       "/images/featured1.jpg",
       "/images/featured1.jpg",
       "/images/featured1.jpg"
     ],
-    "services": ["Re-designing", "development"],
-    "duration": "1 month",
+    "about": "Viswa Consult Pvt.Ltd. Has a longstanding and illustrious track record spanning over 24 years and 200+ projects. Established in the year 1998, the company is registered with the Department of industries GON, Nepal under the Company Act 2021.",
+    "services": ["Web Designing", "Developmwnt"],
+    "duration": "2 month",
     "thumbnail": "/images/featured1.jpg",
-    "link": "https://jina-alchemy.com",
+    "link": "https://viswaconsult.com",
+    "slug": "viswa_consult",
     "id": "2"
   },
   {
@@ -35,10 +41,12 @@
       "/images/featured1.jpg",
       "/images/featured1.jpg"
     ],
+    "about": "Jina Alchemy began with a simple belief: true beauty flourishes when we work in harmony with nature's regenerative power. We believe healthy hair and radiant skin start with natural ingredients and traditional practices that support your body's inherent renewal processes. Today, Jina Alchemy offers a range of natural skincare and aromatherapeutic products, made in Nepal.",
     "services": ["Re-designing", "development"],
     "duration": "1 month",
     "thumbnail": "/images/featured1.jpg",
     "link": "https://jina-alchemy.com",
+    "slug": "viswa_consult",
     "id": "3"
   },
   {
@@ -49,10 +57,12 @@
       "/images/featured1.jpg",
       "/images/featured1.jpg"
     ],
+    "about": "Jina Alchemy began with a simple belief: true beauty flourishes when we work in harmony with nature's regenerative power. We believe healthy hair and radiant skin start with natural ingredients and traditional practices that support your body's inherent renewal processes. Today, Jina Alchemy offers a range of natural skincare and aromatherapeutic products, made in Nepal.",
     "services": ["Re-designing", "development"],
     "duration": "1 month",
     "thumbnail": "/images/featured1.jpg",
     "link": "https://jina-alchemy.com",
+    "slug": "viswa_consult",
     "id": "4"
   }
 ]

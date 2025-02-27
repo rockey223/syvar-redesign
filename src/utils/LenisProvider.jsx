@@ -37,7 +37,6 @@ const LenisProvider = ({ children }) => {
       const tl = gsap.timeline({
         onComplete: () => {
           dispatch(hide());
-          
         },
       });
 
@@ -80,6 +79,9 @@ const LenisProvider = ({ children }) => {
     }
   }, [displayContact]);
 
+
+
+
   return (
     <>
       {children}
@@ -90,7 +92,7 @@ const LenisProvider = ({ children }) => {
           closeContact={closeContact}
         />
       ) : null}
-
+     
       {/*  */}
     </>
   );

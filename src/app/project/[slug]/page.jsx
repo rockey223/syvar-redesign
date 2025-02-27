@@ -5,9 +5,9 @@ import React from "react";
 import MagneticIcon from "@/components/MagneticIcon";
 import projectData from "@/data/ProjectData.json";
 
-const getData = async (id) => {
+const getData = async (slug) => {
   return projectData.find((project) => {
-    return project.id === id;
+    return project.slug === slug;
   });
 };
 
@@ -18,37 +18,34 @@ const page = async ({ params }) => {
 
   return (
     <>
-      <div className="page-wrapper px-[20px] bg-white w-full md:px-[60px] xl:px-[140px] min-h-[100vh]">
+      <div className="page-wrapper px-[20px] bg-white w-full md:px-[60px]  min-h-[100vh]">
         <div className="project-heading grid grid-cols-4 w-full lg:grid-cols-12 lg:py-[100px] bg-white">
-          <Link
-            href={"/"}
-            className="back col-start-1 col-end-4 hidden lg:flex justify-center items-center text-2xl"
+          <div
+            
+            className="back col-start-1 col-end-4 hidden lg:flex justify-start items-center text-2xl"
           >
-            <div
+            <Link
+            href={'/'}
+           
               title="back"
               className="h-[50px] w-[50px] border-[1px] flex justify-center items-center rounded-full border-black hover:scale-125 transition-all ease-linear"
             >
               <IoArrowBack />
-            </div>
-          </Link>
+            </Link>
+          </div>
           <div className="header col-span-full lg:col-start-4 lg:col-end-13 w-full bg-white py-[0px] lg:py-[60px]">
             <div className="heading text-5xl leading-tight lg:text-8xl font-bold w-full 2xl:w-2/3">
-              Jina Alchemy alchemy
+             {project.projectName}
             </div>
 
             <div className="project-description w-full bg-white min-h-[100px] flex flex-col gap-y-9 lg:flex-row justify-between lg:items-center mt-7">
               <p className="w-full lg:w-2/3 text-gray-800">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
-                voluptatem voluptatum ex cum tempore, voluptate non eligendi quo
-                necessitatibus voluptatibus eum atque autem eveniet est iusto
-                recusandae blanditiis alias! Perferendis natus, perspiciatis cum
-                excepturi totam impedit tempore consequuntur. Ex, blanditiis
-                quod corporis excepturi mollitia sapiente cumque suscipit
-                laborum voluptatem dolorum?
+                {project.about}
               </p>
               <MagneticIcon>
                 <Link
                   href={project.link}
+                   target="_blank"
                   className="mr-9 h-[100px] w-[100px] border-[1px] flex justify-center items-center rounded-full border-gray-600 text-gray-950 hover:bg-blue-200 hover:border-none transition-colors duration-300 ease-in-out hover:text-white"
                 >
                   Visit Site
