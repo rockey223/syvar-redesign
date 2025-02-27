@@ -53,7 +53,7 @@ const WorkCard = ({ work, index }) => {
           className={`featured_image${index} h-[690px] md:h-[800px] 
           md:aspect-auto w-full object-cover`}
           width={1500}
-          height={660}
+          height={860}
           alt="Work Image"
         />
       </div>

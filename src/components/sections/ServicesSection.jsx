@@ -11,7 +11,7 @@ const serviceList = [
 const ServicesSection = () => {
   return (
     <section id="services_section">
-      <div className="h-full lg:h-[100vh] bg-gray-900 w-full py-[100px] lg:py-[149px] flex flex-col gap-16 md:gap-[104px]">
+      <div className="h-full lg:h-[100vh] bg-black w-full py-[100px] lg:py-[149px] flex flex-col gap-16 md:gap-[104px]">
         <div className="h-full flex flex-col justify-center intems-center gap-20">
           <div className="services_header w-full text-center">
             <h2 className="px-1 text-gray-200 text-4xl md:text-[64px] font-medium">
