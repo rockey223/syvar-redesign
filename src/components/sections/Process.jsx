@@ -7,29 +7,29 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
 // Custom Hook to get window width (Only runs on the client)
-const useWindowWidth = () => {
-  const [width, setWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 1200 // Default value for SSR
-  );
+// const useWindowWidth = () => {
+//   const [width, setWidth] = useState(
+//     typeof window !== "undefined" ? window.innerWidth : 1200 // Default value for SSR
+//   );
 
-  useEffect(() => {
-    if (typeof window === "undefined") return; // Skip during SSR
+//   useEffect(() => {
+//     if (typeof window === "undefined") return; // Skip during SSR
 
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-    };
+//     const handleResize = () => {
+//       setWidth(window.innerWidth);
+//     };
 
-    window.addEventListener("resize", handleResize);
+//     window.addEventListener("resize", handleResize);
 
-    handleResize();
+//     handleResize();
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+//     return () => {
+//       window.removeEventListener("resize", handleResize);
+//     };
+//   }, []);
 
-  return width;
-};
+//   return width;
+// };
 const processes = [
   {
     title: "Research & Development",
@@ -70,13 +70,36 @@ const processes = [
 ];
 
 const Process = () => {
-  const width = useWindowWidth();
+  // const [width, setWidth] = useState(
+  //   typeof window !== "undefined" ? window.innerWidth : 1200 // Default value for SSR
+  // );
+  // useEffect(() => {
+  //   if (typeof window === "undefined") return; // Skip during SSR
+
+  //   const handleResize = () => {
+  //     setWidth(window.innerWidth);
+  //     ScrollTrigger.refresh();
+      
+  //   };
+
+  //   window.addEventListener("resize", handleResize);
+
+  //   handleResize();
+
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
+
+  // const width = useWindowWidth();
   const processSection = useRef();
 
   useGSAP(() => {
-    if (typeof window !== "undefined" && width >= 1024) {
+    let mm = gsap.matchMedia();
+    
+    mm.add("(min-width: 1024px)", () => {
       const listItem = gsap.utils.toArray(".testing");
-
+  
       gsap.to(".left", {
         scrollTrigger: {
           trigger: ".process_wrapper",
@@ -86,7 +109,7 @@ const Process = () => {
           scrub: true,
         },
       });
-
+  
       listItem.forEach((list, index) => {
         if (index < listItem.length - 1) {
           gsap
@@ -109,10 +132,12 @@ const Process = () => {
             );
         }
       });
-
+  
       gsap.set(".headers", { yPercent: 0 });
-    }
-  }, [width]); // Dependency on width to re-run animations on resize
+    });
+  
+    return () => mm.revert(); // Clean up on unmount
+  }, []); 
 
   return (
     <section id="our_process" ref={processSection}>
@@ -167,7 +192,11 @@ const Process = () => {
                     ))}
                   </ul>
                 </div>
-                <hr className={`Line lg:ml-[10px] xl:ml-[60px] ${index === processes.length - 1 ? "hidden" : ''}`} />
+                <hr
+                  className={`Line lg:ml-[10px] xl:ml-[60px] ${
+                    index === processes.length - 1 ? "hidden" : ""
+                  }`}
+                />
               </React.Fragment>
             ))}
           </div>

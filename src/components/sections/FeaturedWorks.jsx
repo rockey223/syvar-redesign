@@ -35,9 +35,9 @@ const featuredWorks = [
 const FeaturedWorks = () => {
   return (
     <section id="featured_section">
-      <div className="w-full bg-white py-48 px-5 xl:px-[140px] lg:px-[50px]">
-        <div className="featured_header col-span-full grid grid-cols-4 lg:grid-cols-8 xl:grid-cols-12 gap-x-5 px-5">
-          <h2 className="col-span-4 lg:col-span-4 xl:col-span-10 font-semibold text-[2.5rem] md:text-[3.5rem]">
+      <div className="w-full bg-white pt-48 px-5 xl:px-[140px] lg:px-[50px]">
+        <div className="featured_header col-span-full grid grid-cols-4 lg:grid-cols-8 xl:grid-cols-12 gap-x-5 ">
+          <h2 className="col-span-4 lg:col-span-4 xl:col-span-10 font-semibold text-[2.3rem] md:text-[3.5rem]">
             Featured works
           </h2>
           {/* <button
