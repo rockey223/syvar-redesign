@@ -75,7 +75,7 @@ section{
 .Line:not(:last-child){
   margin-block: 30px;
   width: 80%;
-  margin-inline: auto;
+  /* margin-inline: auto; */
   border-color: black;
 }
 

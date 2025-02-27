@@ -167,7 +167,7 @@ const Process = () => {
                     ))}
                   </ul>
                 </div>
-                <hr className={`Line ${index === processes.length - 1 ? "hidden" : ''}`} />
+                <hr className={`Line lg:ml-[10px] xl:ml-[60px] ${index === processes.length - 1 ? "hidden" : ''}`} />
               </React.Fragment>
             ))}
           </div>
