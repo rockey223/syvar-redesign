@@ -30,14 +30,16 @@ const HeroSection = () => {
       { scale: 300, xPercent: -701 },
       { scale: 1, xPercent: 0 }
     )
+    
+      .to(heroText.current, {duration:0.5, y: -200 })
       .fromTo(
         heroImage.current,
-        { scale: 1.5 },
-        { scale: 1 },
+        { opacity: 1},
+        { opacity: 0},
         "<"
       )
-      .to(heroText.current, {duration:0.5, y: -200 })
       .to(heroDesc.current, {duration:0.5, y: -200 }, "<")
+      
       .fromTo(heroDesc.current, { opacity: 0 }, { opacity: 1 }, "<")
       .fromTo(
         heroBigDesc.current,{
@@ -58,11 +60,11 @@ const HeroSection = () => {
       {/* <Image src={'/syvar.png'} width={100} height={100} alt='syvar' className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 '/> */}
       <Image
         ref={heroImage}
-        src={"/images/jina1.jpg"}
+        src={"/images/photo.avif"}
         width={1000}
         height={1000}
         alt="as"
-        className="w-full h-full fixed z-[-1] inset-0 object-cover"
+        className="w-full h-full fixed z-[-1] inset-0 object-cover "
       />
       <div
         ref={maskref}
@@ -74,7 +76,7 @@ const HeroSection = () => {
         <p ref={heroDesc} className="text-2xl text-[#e1e1e1] ">
           We sculpt dreams into digital marvels.
         </p>
-        <p ref={heroBigDesc} className="w-1/2 text-blue-700 text-3xl text-center">
+        <p ref={heroBigDesc} className="w-1/2 text-blue-700 text-3xl text-center bg-black">
           We sculpt dreams into digital marvels. Your Essence, our excellence,
           elevating the product experience together.
         </p>
