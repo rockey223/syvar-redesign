@@ -14,11 +14,10 @@ const getData = async (slug) => {
 const page = async ({ params }) => {
   const id = await params;
   const project = await getData(id.slug);
-  console.log(project);
 
   return (
     <>
-      <div className="page-wrapper px-[20px] bg-white w-full md:px-[60px]  min-h-[100vh]">
+      <div className="page-wrapper px-[20px] bg-white w-full md:px-[60px] xl:pr-[160px] min-h-[100vh]">
         <div className="project-heading grid grid-cols-4 w-full lg:grid-cols-12 lg:py-[100px] bg-white">
           <div
             
@@ -54,7 +53,7 @@ const page = async ({ params }) => {
             </div>
           </div>
         </div>
-        <div className="project-content grid grid-cols-4 lg:grid-cols-12">
+        <div className="project-content grid grid-cols-4 lg:grid-cols-12 mt-12">
           <div className="services lg:sticky top-0 lg:pt-[180px] flex lg:justify-center lg:-mt-[180px] lg:h-screen col-span-full w-full lg:col-start-1 lg:col-end-4">
             <div className="w-full">
               <div className="w-full">

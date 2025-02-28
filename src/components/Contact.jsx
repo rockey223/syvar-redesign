@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Link from "next/link";
 
 const services = [
@@ -26,8 +26,11 @@ const Contact = ({ ref, bgRef, closeContact }) => {
   return (
     <>
       <div
+        role="button"
         ref={bgRef}
-        className="fixed top-0 left-0 right-0 bottom-0 backdrop-blur-md dark w-screen h-screen bg-[#000c] opacity-100 z-10 pointer-events-auto"
+        title="Close"
+        onClick={closeContact}
+        className="close fixed top-0 left-0 right-0 bottom-0 backdrop-blur-md dark w-screen h-screen bg-[#0002] opacity-100 z-10 pointer-events-auto cursor-pointer"
       />
       <div
         ref={ref}
@@ -39,17 +42,15 @@ const Contact = ({ ref, bgRef, closeContact }) => {
         {/* close btn */}
 
         <div className="sticky flex top-0 items-center justify-end pointer-events-none">
-          
           <button
             onClick={closeContact}
             type="button"
             className="flex items-center bg-black text-white justify-center pointer-events-auto transition-all duration-200 ease-linear rounded-full h-7 w-7 md:h-8 md:w-8"
             aria-label="Close"
-            >
+          >
             <div className="i-carbon-close w-8 h-8 sm:w-6 sm:h-6"></div>
           </button>
         </div>
-   
 
         {/* title */}
         <div className="title mt-5 sm:mt-7 mb-4 ">
@@ -180,4 +181,3 @@ const Contact = ({ ref, bgRef, closeContact }) => {
 };
 
 export default Contact;
-
