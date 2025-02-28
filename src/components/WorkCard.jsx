@@ -36,7 +36,7 @@ const WorkCard = ({ work, index }) => {
       href={`/project/${work.slug}`}
       ref={container}
       scroll={true}
-      className={` group work_card flex flex-col gap-4 relative w-full 
+      className={`view group work_card flex flex-col gap-4 relative w-full 
         ${
           index % 2 !== 0
             ? "col-start-1 col-end-5 xl:col-start-4 xl:col-end-13 lg:col-start-3 lg:col-end-13"

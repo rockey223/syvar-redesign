@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 import { Provider, useDispatch, useSelector } from "react-redux";
 import { store } from "@/app/store";
 import { hide, show } from "./contactSlice";
+import Cursor from "@/components/Cursor";
 
 gsap.registerPlugin(useGSAP);
 
@@ -92,7 +93,7 @@ const LenisProvider = ({ children }) => {
           closeContact={closeContact}
         />
       ) : null}
-     
+     <Cursor/>
       {/*  */}
     </>
   );
