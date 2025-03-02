@@ -12,6 +12,10 @@
 
 :root {
   /* gray */
+
+  --bg-change : #000;
+  --text-change : #fff;
+
   --color-gray-0: #9d9d9d;
   --color-gray-200: #d3d3d3;
   --color-gray-400: #afafaf;
@@ -121,4 +125,8 @@ section{
 .line .box:hover{
   height: 500px;
   top: -250px;
+}
+
+.no-scroll {
+  overflow: hidden;
 }

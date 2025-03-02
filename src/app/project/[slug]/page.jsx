@@ -4,6 +4,7 @@ import { IoArrowBack } from "react-icons/io5";
 import React from "react";
 import MagneticIcon from "@/components/MagneticIcon";
 import projectData from "@/data/ProjectData.json";
+import BackButton from "@/components/BackButton";
 
 const getData = async (slug) => {
   return projectData.find((project) => {
@@ -19,19 +20,7 @@ const page = async ({ params }) => {
     <>
       <div className="page-wrapper px-[20px] bg-white w-full md:px-[60px] xl:pr-[160px] min-h-[100vh]">
         <div className="project-heading grid grid-cols-4 w-full lg:grid-cols-12 lg:py-[100px] bg-white">
-          <div
-            
-            className="back col-start-1 col-end-4 hidden lg:flex justify-start items-center text-2xl"
-          >
-            <Link
-            href={'/'}
-           
-              title="back"
-              className="h-[50px] w-[50px] border-[1px] flex justify-center items-center rounded-full border-black hover:scale-125 transition-all ease-linear"
-            >
-              <IoArrowBack />
-            </Link>
-          </div>
+          <BackButton/>
           <div className="header col-span-full lg:col-start-4 lg:col-end-13 w-full bg-white py-[0px] lg:py-[60px]">
             <div className="heading text-5xl leading-tight lg:text-8xl font-bold w-full 2xl:w-2/3">
              {project.projectName}

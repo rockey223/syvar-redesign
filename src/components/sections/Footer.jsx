@@ -37,17 +37,17 @@ const Footer = () => {
 
   const handleIn = () => {
 
-    const tl = gsap.timeline();
+    const tl = gsap.timeline({duration: 0.2,ease: 'none'});
 
     tl.to(".hello", {
       y: -120,
-      duration: 1,
-      ease: "elastic.out(1,0.5)",
+     
+      // ease: "elastic.out(1,0.5)",
     }).to(
       ".bye",
       {
-        duration: 1,
-        ease: "elastic.out(1,0.5)",
+        // duration: 0.2,
+        // ease: "elastic.out(1,0.5)",
 
         y: -120,
       },

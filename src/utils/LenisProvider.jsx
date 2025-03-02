@@ -80,7 +80,19 @@ const LenisProvider = ({ children }) => {
     }
   }, [displayContact]);
 
-
+useGSAP(()=>{
+  const featured = document.getElementById("featured_title")
+  gsap.to("body",{
+    "--bg-change" : "#fff",
+    "--text-change" : "#000",
+    scrollTrigger:{
+      trigger: featured,
+      start: "top 80%",
+      end: "top 20%",
+      scrub: true
+    }
+  })
+})
 
 
   return (

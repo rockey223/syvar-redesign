@@ -38,12 +38,12 @@ const WorkCard = ({ work, index }) => {
       scroll={true}
       className={`view group work_card flex flex-col gap-4 relative w-full 
         ${
-          index % 2 !== 0
+          index % 2 == 0
             ? "col-start-1 col-end-5 xl:col-start-4 xl:col-end-13 lg:col-start-3 lg:col-end-13"
             : "col-start-1 col-end-5 lg:col-start-1 lg:col-end-10 xl:col-start-1 xl:col-end-10"
         }`}
     >
-      <div className="featured_image h-[450px] md:h-[760px] w-full overflow-hidden rounded-xl ">
+      <div className="featured_image h-[450px] md:h-[760px] w-full overflow-hidden rounded-xl hover:brightness-75 transition-all ease-in-out duration-200">
         {/* Custom Cursor */}
 
         {/* Image */}

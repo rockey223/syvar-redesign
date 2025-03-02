@@ -6,30 +6,6 @@ import { ScrollTrigger } from "gsap/all";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Custom Hook to get window width (Only runs on the client)
-// const useWindowWidth = () => {
-//   const [width, setWidth] = useState(
-//     typeof window !== "undefined" ? window.innerWidth : 1200 // Default value for SSR
-//   );
-
-//   useEffect(() => {
-//     if (typeof window === "undefined") return; // Skip during SSR
-
-//     const handleResize = () => {
-//       setWidth(window.innerWidth);
-//     };
-
-//     window.addEventListener("resize", handleResize);
-
-//     handleResize();
-
-//     return () => {
-//       window.removeEventListener("resize", handleResize);
-//     };
-//   }, []);
-
-//   return width;
-// };
 const processes = [
   {
     title: "Research & Development",
@@ -70,28 +46,7 @@ const processes = [
 ];
 
 const Process = () => {
-  // const [width, setWidth] = useState(
-  //   typeof window !== "undefined" ? window.innerWidth : 1200 // Default value for SSR
-  // );
-  // useEffect(() => {
-  //   if (typeof window === "undefined") return; // Skip during SSR
 
-  //   const handleResize = () => {
-  //     setWidth(window.innerWidth);
-  //     ScrollTrigger.refresh();
-      
-  //   };
-
-  //   window.addEventListener("resize", handleResize);
-
-  //   handleResize();
-
-  //   return () => {
-  //     window.removeEventListener("resize", handleResize);
-  //   };
-  // }, []);
-
-  // const width = useWindowWidth();
   const processSection = useRef();
 
   useGSAP(() => {
@@ -111,14 +66,16 @@ const Process = () => {
       });
   
       listItem.forEach((list, index) => {
+        console.log(list);
+        
         if (index < listItem.length - 1) {
           gsap
             .timeline({
               scrollTrigger: {
                 trigger: list,
                 id: "elem" + index,
-                start: "center center",
-                end: "50% top",
+                start: "top top",
+                end: "bottom top",
                 scrub: true,
               },
             })
@@ -141,7 +98,7 @@ const Process = () => {
 
   return (
     <section id="our_process" ref={processSection}>
-      <div className="process_wrapper bg-white flex flex-col lg:flex-row lg:justify-between max-lg:px-[30px] ">
+      <div className="process_wrapper bg-white flex flex-col lg:flex-row lg:justify-between max-lg:px-[30px]  ">
         {/* Left Section */}
         <div className="left w-full lg:w-1/2 xl:w-1/2 max-h-[900px] lg:h-screen flex pt-[60px] lg:border-r-[2px] border-black">
           <div className="process_left_content_wrapper xl:pl-[120px] lg:pl-[60px]">
