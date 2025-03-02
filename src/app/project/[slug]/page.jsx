@@ -18,7 +18,7 @@ const page = async ({ params }) => {
 
   return (
     <>
-      <div className="page-wrapper px-[20px] bg-white w-full md:px-[60px] xl:pr-[160px] min-h-[100vh]">
+      <div className="page-wrapper px-[20px] bg-white w-full md:px-[60px] xl:pr-[160px] min-h-[100vh]" style={{"--bg-change": "#000"}}>
         <div className="project-heading grid grid-cols-4 w-full lg:grid-cols-12 lg:py-[100px] bg-white">
           <BackButton/>
           <div className="header col-span-full lg:col-start-4 lg:col-end-13 w-full bg-white py-[0px] lg:py-[60px]">

@@ -16,7 +16,8 @@ const LenisProvider = ({ children }) => {
   const bgRef = useRef(null);
   useEffect(() => {
     const lenis = new Lenis({
-      autoRaf: true,
+      // duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
     // Initialize Lenis
 
@@ -80,19 +81,6 @@ const LenisProvider = ({ children }) => {
     }
   }, [displayContact]);
 
-useGSAP(()=>{
-  const featured = document.getElementById("featured_title")
-  gsap.to("body",{
-    "--bg-change" : "#fff",
-    "--text-change" : "#000",
-    scrollTrigger:{
-      trigger: featured,
-      start: "top 80%",
-      end: "top 20%",
-      scrub: true
-    }
-  })
-})
 
 
   return (

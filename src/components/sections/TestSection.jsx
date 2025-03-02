@@ -30,7 +30,7 @@ const TestSection = () => {
         scrollTrigger: {
           trigger: "#hero_section",
           start: "top top", // Animation starts when the section reaches the top
-          end: "+=1000", // Scroll distance before animation completes
+          end: "+=500", // Scroll distance before animation completes
           scrub: true, // Makes animation smooth while scrolling
           pin: true, // Keeps section pinned during animation
           // markers: true, // For debugging (remove in production)
@@ -50,7 +50,7 @@ const TestSection = () => {
   }, []);
 
   return (
-    <>
+    <div className="relative" >
       <section
         id="hero_section"
         className="h-screen w-full bg-white overflow-hidden relative "
@@ -61,7 +61,7 @@ const TestSection = () => {
           width={1000}
           height={1000}
           alt="as"
-          className="w-full h-full fixed z-[-1] inset-0 object-cover "
+          className="w-full h-full fixed z-[-1] inset-0 object-cover"
         />
         <div
           ref={maskref}
@@ -109,7 +109,7 @@ const TestSection = () => {
           </section>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

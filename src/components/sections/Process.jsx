@@ -66,7 +66,7 @@ const Process = () => {
       });
   
       listItem.forEach((list, index) => {
-        console.log(list);
+      
         
         if (index < listItem.length - 1) {
           gsap
