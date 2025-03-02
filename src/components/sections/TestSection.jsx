@@ -30,20 +30,22 @@ const TestSection = () => {
         scrollTrigger: {
           trigger: "#hero_section",
           start: "top top", // Animation starts when the section reaches the top
-          end: "+=1500", // Scroll distance before animation completes
+          end: "+=1000", // Scroll distance before animation completes
           scrub: true, // Makes animation smooth while scrolling
           pin: true, // Keeps section pinned during animation
           // markers: true, // For debugging (remove in production)
         },
       })
       .fromTo(
-        heroText.current,
-        { scale: 220, x: "-100vw", duration: 2 },
-        { scale: 1, x: 0, duration: 2 }
-      )
-      .fromTo(heroImage.current, { opacity: 1 }, { opacity: 0 }, "+=0.2")
-      .fromTo(heroText.current, { opacity: 1 }, { opacity: 0 })
-      .fromTo("#services_section", { opacity: 0, y: 300 }, { opacity: 1,y:0 });
+          heroText.current,
+          { scale: 220, x: "-100vw", duration: 2 },
+          { scale: 1, x: 0, duration: 2 }
+        )
+        .fromTo(heroImage.current, { opacity: 1,duration: 1 }, { opacity: 0,duration: 1  }, ">")
+
+      .to(heroText.current, {y: -300 },"<")
+      .fromTo(heroText.current, { opacity: 1 }, { opacity: 0 },"<")
+      .fromTo("#services_section", { opacity: 0, y: 800 }, { opacity: 1,y:0 },"<");
     // .to(heroText.current, { y: -200 },"<");
   }, []);
 
@@ -63,16 +65,16 @@ const TestSection = () => {
         />
         <div
           ref={maskref}
-          className="relative mask h-full w-full bg-black flex flex-col justify-center items-center mix-blend-multiply"
+          className="relative mask h-full w-full bg-[var(--bg-change)] flex flex-col justify-center items-center mix-blend-multiply"
         >
           <h1
             ref={heroText}
-            className="absolute text-9xl font-bold tracking-widest text-white pointer-events-none"
+            className="absolute text-6xl lg:text-9xl font-bold tracking-widest text-white pointer-events-none"
           >
             SYVAR
           </h1>
           <section id="services_section" className="opacity-0 absolute">
-            <div className="h-full lg:h-[100vh] bg-[var(--bg-change)] w-full py-[100px] lg:py-[149px] flex flex-col gap-16 md:gap-[104px]">
+            <div className="h-full lg:h-[100vh]  w-full py-[100px] lg:py-[149px] flex flex-col gap-16 md:gap-[104px]">
               <div
                 ref={services}
                 className="h-full flex flex-col justify-center intems-center gap-20"
