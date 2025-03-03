@@ -90,7 +90,7 @@ const TestSection = () => {
                     {serviceList.map((service, index) => (
                       <li
                         key={index}
-                        className="flex justify-center items-center  py-2 lg:py-3 px-4 lg:px-[30px] rounded-full lg:border-[2px] border-[var(--text-change)] text-[var(--text-change)] md:text-lg"
+                        className="flex justify-center items-center   py-2 lg:py-3 px-4 lg:px-[30px] rounded-full border-[2px] border-[var(--text-change)] text-[var(--text-change)] md:text-lg"
                       >
                         {service}
                       </li>
