@@ -32,16 +32,12 @@ const socialMediaIcons = [
 ];
 
 const Footer = () => {
-
-
-
   const handleIn = () => {
-
-    const tl = gsap.timeline({duration: 0.2,ease: 'none'});
+    const tl = gsap.timeline({ duration: 0.2, ease: "none" });
 
     tl.to(".hello", {
       y: -120,
-     
+
       // ease: "elastic.out(1,0.5)",
     }).to(
       ".bye",
@@ -78,37 +74,37 @@ const Footer = () => {
   return (
     <>
       <div className="max-mb-[900px] mb-[900px]" />
-      <section className=" max-h-[900px] h-screen bg-black w-[100.01%] fixed bottom-0 right-1/2 translate-x-1/2 -z-10 px-[30px] lg:px-[60px] xl:px-[140px] py-[80px]">
+      <footer className=" max-h-[900px] h-screen bg-black w-[100.01%] fixed bottom-0 right-1/2 translate-x-1/2 -z-10 px-[30px] lg:px-[60px] xl:px-[60px] py-[80px]">
         <div className="footer_header">
-          <h1 className="text-[32px] xl:text-[64px] text-white font-bold">
-            Syvar technology
+          <h1 className="text-[32px] xl:text-[64px] text-white font-bold ">
+            Syvar Technology
           </h1>
         </div>
         <div className="spacer mt-[30px]" />
         <String />
         <div className="spacer mt-[30px]" />
-        <div className="footer_contact flex flex-col md:flex-row gap-y-[10px] gap-x-[88px] text-white">
+        <div className="footer_contact flex flex-col md:flex-row gap-y-[10px] gap-x-[30px] text-gray-600">
           <Link
             href={"/"}
-            className="text-xl md:text-2xl hover:text-yellow-300"
+            className="text-xl md:text-base 2xl:text-xl hover:text-yellow-300"
           >
             +977 9843636520
           </Link>
           <Link
             href={"/"}
-            className="text-xl md:text-2xl hover:text-yellow-300"
+            className="text-xl md:text-base 2xl:text-xl hover:text-yellow-300"
           >
             info@syvartech.com.np
           </Link>
         </div>
-        <div className=" mt-[50px] md:mt-[100px] flex justify-center gap-y-[80px] md:gap-y-[100px] lg:justify-between flex-col lg:flex-row items-center h-[300px] ">
-          <div className="social_Links flex gap-x-10 w-full justify-center items-center md:w-1/4">
+        <div className="mt-[50px] lg:mt-0 2xl:mt-[100px] md:mt-[100px] flex justify-center gap-y-[80px] md:gap-y-[100px] lg:justify-between flex-col lg:flex-row items-center h-[300px] ">
+          <div className="social_Links flex gap-x-10 w-full items-center md:w-1/4">
             {socialMediaIcons.map((icon) => {
               return (
                 <MagneticIcon key={icon.title}>
                   <Link
                     href={icon.link}
-                    className="text-7xl text-gray-200 hover:text-yellow-400"
+                    className="text-6xl text-gray-600 hover:text-yellow-400"
                   >
                     {icon.icon}
                   </Link>
@@ -117,7 +113,7 @@ const Footer = () => {
             })}
           </div>
           <div
-            className="contact_link h-[120px] w-full md:w-3/4 flex lg:justify-end 
+            className=" contact_link h-[120px] w-full md:w-3/4 flex lg:justify-end 
           md:justify-center max-lg:items-center"
           >
             <Link
@@ -126,7 +122,7 @@ const Footer = () => {
                 dispatch(show());
               }}
               scroll={false}
-              className="h-full  text-white text-5xl lg:text-8xl text-center"
+              className="h-full  text-white text-5xl lg:text-7xl text-center"
             >
               <div
                 className="h-full w-full relative overflow-hidden"
@@ -143,15 +139,15 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 w-full mb-[20px] gap-y-[10px] h-[60px] text-gray-200 flex flex-col md:flex-row items-center md:justify-between px-[30px] lg:px-[60px] xl:px-[140px]">
-          <p className=" text-sm md:text-xl">
+        <div className="absolute bottom-0 left-0 w-full mb-[10px] gap-y-[10px] h-[60px] text-gray-500 flex flex-col md:flex-row items-center md:justify-between px-[30px] lg:px-[60px] xl:px-[60px]">
+          <p className=" text-sm ">
             All right reserved 2025 &copy; Syvar Technology
           </p>
-          <p className="text-sm md:text-xl">
+          <p className="text-sm ">
             <Link href={"/"}>Privacy Policy</Link>
           </p>
         </div>
-      </section>
+      </footer>
     </>
   );
 };

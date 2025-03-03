@@ -38,14 +38,15 @@ const TestSection = () => {
       })
       .fromTo(
           heroText.current,
-          { scale: 220, x: "-100vw", duration: 2 },
-          { scale: 1, x: 0, duration: 2 }
+          { scale: 220, x: "-100vw", duration: 5 },
+          { scale: 1, x: 0, duration: 5 }
         )
         .fromTo(heroImage.current, { opacity: 1,duration: 1 }, { opacity: 0,duration: 1  }, ">")
 
-      .to(heroText.current, {y: -300 },"<")
-      .fromTo(heroText.current, { opacity: 1 }, { opacity: 0 },"<")
-      .fromTo("#services_section", { opacity: 0, y: 800 }, { opacity: 1,y:0 },"<");
+      .to(heroText.current, {y: -300,duration: 3 })
+      .to(heroText.current, {fontSize: "6rem",duration: 2 },"<")
+      .fromTo(heroText.current, { opacity: 1, }, { opacity: 0,y:-450,duration: 3 },"+=0.5")
+      .fromTo("#services_section", { opacity: 0, y: 300 }, { opacity: 1,y:0,duration: 3},"<");
     // .to(heroText.current, { y: -200 },"<");
   }, []);
 
@@ -53,7 +54,7 @@ const TestSection = () => {
     <div className="relative" >
       <section
         id="hero_section"
-        className="h-screen w-full bg-white overflow-hidden relative "
+        className="h-screen w-full overflow-hidden relative "
       >
         <Image
           ref={heroImage}
@@ -69,35 +70,35 @@ const TestSection = () => {
         >
           <h1
             ref={heroText}
-            className="absolute text-6xl lg:text-9xl font-bold tracking-widest text-white pointer-events-none"
+            className="absolute text-7xl lg:text-9xl font-bold tracking-widest text-white pointer-events-none"
           >
             SYVAR
           </h1>
-          <section id="services_section" className="opacity-0 absolute">
+          <div id="services_section" className="opacity-0 absolute">
             <div className="h-full lg:h-[100vh]  w-full py-[100px] lg:py-[149px] flex flex-col gap-16 md:gap-[104px]">
               <div
                 ref={services}
-                className="h-full flex flex-col justify-center intems-center gap-20"
+                className="h-full flex flex-col justify-center intems-center "
               >
                 <div className="services_header w-full text-center">
-                  <h2 className="px-1 text-gray-200 text-4xl md:text-[64px] font-medium">
+                  <h2 className="px-1 text-white text-4xl md:text-[48px] font-bold tracking-wide">
                     Delivering on your Expectations
                   </h2>
                 </div>
-                <div className="services_list w-full xl:px-[138px] 2xl:px-[500px] mb-2 md:mb-5">
-                  <ul className="w-full flex flex-wrap gap-x-5 md:gap-x-9 xl:gap-x-2 gap-y-8 items-center justify-center">
+                <div className="services_list w-full xl:px-[138px] 2xl:px-[500px] mt-20 mb-2 md:mb-5">
+                  <ul className="w-full flex flex-wrap gap-x-5 md:gap-x-9 xl:gap-x-4 gap-y-8 items-center justify-center">
                     {serviceList.map((service, index) => (
                       <li
                         key={index}
-                        className="flex justify-center items-center py-2 lg:py-3 px-4 lg:px-[30px] rounded-full border-2 lg:border-[2px] border-[var(--text-change)] text-[var(--text-change)] md:text-lg"
+                        className="flex justify-center items-center  py-2 lg:py-3 px-4 lg:px-[30px] rounded-full lg:border-[2px] border-[var(--text-change)] text-[var(--text-change)] md:text-lg"
                       >
                         {service}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className=" flex flex-col px-2 xl:px-[100px] 2xl:px-[530px] justify-center items-center gap-10">
-                  <p className="max-w-[800px] text-center text-xl md:px-4 text-[var(--text-change)]">
+                <div className=" flex flex-col px-2 xl:px-[100px] mt-[20px] 2xl:mt-[20px] 2xl:px-[530px] justify-center items-center gap-10">
+                  <p className="max-w-[800px] text-center text-base md:px-4 text-[var(--text-change)] brightness-50">
                     We simplify the complex by breaking it down into clear,
                     actionable steps. Our approach ensures efficiency, quality,
                     and a seamless experience for you.
@@ -106,7 +107,7 @@ const TestSection = () => {
                 </div>
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </section>
     </div>

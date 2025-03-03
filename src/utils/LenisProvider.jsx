@@ -17,7 +17,7 @@ const LenisProvider = ({ children }) => {
   useEffect(() => {
     const lenis = new Lenis({
       // duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
     // Initialize Lenis
 
@@ -81,7 +81,82 @@ const LenisProvider = ({ children }) => {
     }
   }, [displayContact]);
 
+  // useGSAP(() => {
+  //   const allSections = document.querySelectorAll("section");
+  //   console.log(allSections);
 
+  //   const sections = gsap.utils.toArray(allSections);
+  //   console.log(sections);
+
+  //   const bg = ["#000", "#fff", "#2e2e2e"];
+  //   const text = ["#fff", "#000", "#fff"];
+
+  //   sections.forEach((sec, index) => {
+  //     gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: sec,
+  //         start: "top 80%",
+  //         end: "top 20%",
+  //         scrub: true,
+  //       },
+  //     }).fromTo('body',{
+  //       '--bg-change': bg[index - 1],
+  //       "--text-change" : text[index - 1]
+  //     },{
+        
+  //       "--text-change" : text[index],
+  //       '--bg-change': bg[index]
+  //     })
+  //   });
+
+  //   // const sections = gsap.utils.toArray
+  // });
+
+  // useGSAP(() => {
+  //   const processSection = document.getElementById("our_process");
+  //   const featuredTitle = document.getElementById("featured_title");
+
+  //   if (!processSection || !featuredTitle) return;
+
+  //   // Explicitly set initial background to black
+  //   gsap.set("body", {
+  //     "--bg-change": "#000",
+  //     "--text-change": "#fff",
+  //   });
+
+  //   gsap.to(
+  //     "body",
+
+  //     {
+  //       "--bg-change": "#fff",
+  //       "--text-change": "#000",
+  //       scrollTrigger: {
+  //         trigger: featuredTitle,
+  //         start: "top 80%",
+  //         end: "top 20%",
+  //         scrub: true,
+  //       },
+  //     }
+  //   );
+
+  //   gsap.fromTo(
+  //     "body",
+  //     {
+  //       "--bg-change": "#fff",
+  //       "--text-change": "#000",
+  //     },
+  //     {
+  //       "--bg-change": "#649FE4",
+  //       "--text-change": "#000",
+  //       scrollTrigger: {
+  //         trigger: processSection,
+  //         start: "top 80%",
+  //         end: "top 20%",
+  //         scrub: true,
+  //       },
+  //     }
+  //   );
+  // }, []);
 
   return (
     <>
@@ -93,7 +168,7 @@ const LenisProvider = ({ children }) => {
           closeContact={closeContact}
         />
       ) : null}
-     <Cursor/>
+      <Cursor />
       {/*  */}
     </>
   );

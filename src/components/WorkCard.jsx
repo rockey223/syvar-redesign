@@ -36,14 +36,14 @@ const WorkCard = ({ work, index }) => {
       href={`/project/${work.slug}`}
       ref={container}
       scroll={true}
-      className={`view group work_card flex flex-col gap-4 relative w-full 
+      className={`view group work_card flex flex-col gap-2 relative w-full 
         ${
-          index % 2 == 0
-            ? "col-start-1 col-end-5 xl:col-start-4 xl:col-end-13 lg:col-start-3 lg:col-end-13"
+          index % 2 !== 0
+            ? "col-start-1 col-end-5 lg:col-start-3 lg:col-end-13 xl:col-start-4 xl:col-end-13"
             : "col-start-1 col-end-5 lg:col-start-1 lg:col-end-10 xl:col-start-1 xl:col-end-10"
         }`}
     >
-      <div className="featured_image h-[450px] md:h-[760px] w-full overflow-hidden rounded-xl hover:brightness-75 transition-all ease-in-out duration-200">
+      <div className="featured_image h-[450px] lg:h-[500px] 2xl:h-[760px] w-full overflow-hidden rounded-xl hover:brightness-50 transition-all ease-in-out duration-200">
         {/* Custom Cursor */}
 
         {/* Image */}
@@ -60,11 +60,11 @@ const WorkCard = ({ work, index }) => {
 
       {/* Work Content */}
       <div className="featured_work_content flex flex-col ">
-        <h3 className="text-[18px] md:text-[36px] font-semibold text-gray-900">
+        <h3 className="text-[18px] md:text-[24px] 2xl:text-[28px] font-semibold text-gray-900">
           {work.projectName}
           {/* <span className="text-[14px] md:text-[20px]">{`"${work.tagLine}"`}</span> */}
         </h3>
-        <p className="text-base text-gray-600 font-medium">
+        <p className="text-sm text-gray-600 font-medium">
           {work.services.join(", ")}
         </p>
       </div>

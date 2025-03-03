@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
       <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <body className="w-full ">
+      <body className="w-full bg-[var(--bg-change)] ">
         <ReduxProvider>
 
         <LenisProvider>

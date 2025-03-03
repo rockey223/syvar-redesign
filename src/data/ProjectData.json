@@ -18,7 +18,7 @@
     "slug": "Jina_Alchemy"
   },
   {
-    "projectName": "Viswa Consult",
+    "projectName": "Viswa Consult Pvt. Ltd.",
     "images": [
       "/images/featured1.jpg",
       "/images/featured1.jpg",
@@ -26,15 +26,15 @@
       "/images/featured1.jpg"
     ],
     "about": "Viswa Consult Pvt.Ltd. Has a longstanding and illustrious track record spanning over 24 years and 200+ projects. Established in the year 1998, the company is registered with the Department of industries GON, Nepal under the Company Act 2021.",
-    "services": ["Web Designing", "Developmwnt"],
+    "services": ["Web Designing", "Development"],
     "duration": "2 month",
-    "thumbnail": "/images/featured1.jpg",
+    "thumbnail": "/images/viswaconsultThumbnail.jpg",
     "link": "https://viswaconsult.com",
     "slug": "viswa_consult",
     "id": "2"
   },
   {
-    "projectName": "Jina Alchemy",
+    "projectName": "Sangam Hair and Beauty",
     "images": [
       "/images/featured1.jpg",
       "/images/featured1.jpg",
@@ -42,11 +42,11 @@
       "/images/featured1.jpg"
     ],
     "about": "Jina Alchemy began with a simple belief: true beauty flourishes when we work in harmony with nature's regenerative power. We believe healthy hair and radiant skin start with natural ingredients and traditional practices that support your body's inherent renewal processes. Today, Jina Alchemy offers a range of natural skincare and aromatherapeutic products, made in Nepal.",
-    "services": ["Re-designing", "development"],
+    "services": ["Web Designing", "Development"],
     "duration": "1 month",
-    "thumbnail": "/images/featured1.jpg",
-    "link": "https://jina-alchemy.com",
-    "slug": "viswa_consult",
+    "thumbnail": "/images/sangamthumbnail1.jpg",
+    "link": "https://www.sangamhairbeauty.co.uk/",
+    "slug": "Sangam_Hair_and_Beauty",
     "id": "3"
   }
 ]

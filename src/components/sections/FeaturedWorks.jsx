@@ -62,7 +62,7 @@ useGSAP(()=>{
 
   return (
     <section id="featured_section">
-      <div className="w-full bg-[var(--bg-change)] pt-48 px-5 xl:px-[140px] lg:px-[50px] lg:pb-[100px]">
+      <div className="w-full bg-[var(--bg-change)] px-5 md:pt-16 xl:pt-20 2xl:pt-0 xl:px-[60px] lg:px-[50px] lg:pb-[100px]">
         <div className="featured_header col-span-full grid grid-cols-4 lg:grid-cols-8 xl:grid-cols-12 gap-x-5 ">
           <h2 ref={featuredTitle} id="featured_title" className=" text-[var(--text-change)] col-span-4 lg:col-span-4 xl:col-span-10 font-semibold text-[2.3rem] md:text-[3.5rem]">
             Featured works
