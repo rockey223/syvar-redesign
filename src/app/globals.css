@@ -86,6 +86,68 @@ section{
   border-color: black;
 }
 
+.blurnav{
+  height: 300%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transform: translateZ(0) translateY(-30%);
+    transform-origin: left top;
+    transition: transform 1s cubic-bezier(.55,0,.1,1), height 1s cubic-bezier(.55,0,.1,1);
+    width: 100%;
+    z-index: 5;
+}
+
+.blurnav>div{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.blurnav > div:first-of-type{
+  -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+    -webkit-mask: linear-gradient(0deg, hsla(0, 0%, 100%, 0) 0, #fff 12.5%, #fff 37.5%, hsla(0, 0%, 100%, 0) 50%);
+    mask: linear-gradient(0deg, hsla(0, 0%, 100%, 0) 0, #fff 12.5%, #fff 37.5%, hsla(0, 0%, 100%, 0) 50%);
+    z-index: 2;
+}
+.blurnav > div:nth-of-type(2){
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  -webkit-mask: linear-gradient(0deg, hsla(0, 0%, 100%, 0) 12.5%, #fff 37.5%, #fff 50%, hsla(0, 0%, 100%, 0) 62.5%);
+  mask: linear-gradient(0deg, hsla(0, 0%, 100%, 0) 12.5%, #fff 37.5%, #fff 50%, hsla(0, 0%, 100%, 0) 62.5%);
+  z-index: 3;
+}
+.blurnav > div:nth-of-type(3){
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  -webkit-mask: linear-gradient(0deg, hsla(0, 0%, 100%, 0) 37.5%, #fff 50%, #fff 62.5%, hsla(0, 0%, 100%, 0) 75%);
+  mask: linear-gradient(0deg, hsla(0, 0%, 100%, 0) 37.5%, #fff 50%, #fff 62.5%, hsla(0, 0%, 100%, 0) 75%);
+  z-index: 4;
+}
+.blurnav > div:nth-of-type(4){
+  -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    -webkit-mask: linear-gradient(0deg, hsla(0, 0%, 100%, 0) 50%, #fff 62.5%, #fff 75%, hsla(0, 0%, 100%, 0) 87.5%);
+    mask: linear-gradient(0deg, hsla(0, 0%, 100%, 0) 50%, #fff 62.5%, #fff 75%, hsla(0, 0%, 100%, 0) 87.5%);
+    z-index: 5;
+}
+
+@media (orientation: portrait) {
+  .blurnav > div {
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+  }
+
+  .blurnav > div:nth-of-type(3) {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+}
+
 @media only screen and (max-width : 1024px){
   .Line:not(:last-child){
    

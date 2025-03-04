@@ -104,7 +104,7 @@ const Process = () => {
         {/* Left Section */}
         <div className="left w-full lg:w-1/2 xl:w-1/2 max-h-[1000px] lg:h-screen flex pt-[60px] lg:border-r-[2px] border-black">
           <div className="process_left_content_wrapper xl:pl-[60px] lg:pl-[60px]">
-            <h2 className="font-semibold text-[2.5rem] md:text-[3rem] xl:text-[3rem] 2xl:text-[4rem]  mb-[20px]">
+            <h2 className="font-semibold text-[2.5rem] md:text-[3rem] xl:text-[3rem] 2xl:text-[4rem] mt-[30px] mb-[20px]">
               Our Process
             </h2>
             <div className="headings hidden lg:block h-[50px] overflow-y-hidden mb-[10px]">

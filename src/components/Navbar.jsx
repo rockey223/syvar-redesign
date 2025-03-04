@@ -4,11 +4,14 @@ import React from 'react'
 const Navbar = () => {
   return (
     <>
-    <div className='h-20 w-full max-w-[1920px] bg-transparent backdrop-blur-md fixed top-0 left-0 z-50'>
+    <div id='navbar' className='w-full max-w-[1920px] fixed left-0 z-50 opacity-0'>
         <div className="blurnav">
-            
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
-        <div className="flex px-[60px] justify-between items-center h-full">
+        <div className="relative z-[55] flex px-[60px] justify-between items-center h-full">
             <div className="logo h-16 w-16">
                 <Image src={'/logo.svg'} width={100} height={100} alt='logo' className='h-full w-full'/>
             </div>
