@@ -94,12 +94,34 @@ const Process = () => {
   
       gsap.set(".headers", { yPercent: 0 });
     });
+    mm.add("(max-width : 1023px)",()=>{
+      
+      
+      const list = gsap.utils.toArray("#list p") 
+list.forEach((ist)=>{
+
+  gsap.to(ist,{
+    backgroundPosition: "0%",
+    stagger: 1,
+    scrollTrigger:{
+      trigger:ist,
+      scrub: true,
+      start: "top center",
+      end: "bottom center",
+    }
+  })
+})
+
+
+    })
   
     return () => mm.revert(); // Clean up on unmount
   }, []); 
 
   return (
-    <section id="our_process" ref={processSection} className="bg-[#f8f6f2]">
+    <section id="our_process" ref={processSection} 
+    // className="bg-[#f8f6f2]"
+    >
       <div className="process_wrapper  flex flex-col lg:flex-row lg:justify-between max-lg:px-[30px] xl:pb-0 2xl:pb-[100px] pb-[100px]">
         {/* Left Section */}
         <div className="left w-full lg:w-1/2 xl:w-1/2 max-h-[1000px] lg:h-screen flex pt-[60px] lg:border-r-[2px] border-black">
@@ -133,23 +155,24 @@ const Process = () => {
             {processes.map((process, index) => (
               <React.Fragment key={process.title + index}>
                 <div
+                id="list"
                   key={process.title + index}
                   className="right-content lg:pt-[155px] 2xl:pt-[190px] lg:pb-[254px] relative "
                 >
                   {/* <div className="absolute w-[3px] bg-red-700 border-4 border-red-400 h-full"></div> */}
-                  <div className="m_heading lg:hidden text-xl md:text-3xl  mb-2 font-semibold">
+                  <p className="m_heading lg:hidden text-xl md:text-3xl  mb-2 font-semibold">
                     {`0${index + 1} ${process.title}`}
-                  </div>
-                  <ul className="testing lg:ml-[10px] xl:ml-[60px] flex flex-col lg:gap-y-[32px] mb-[20px] relative ">
+                  </p>
+                  <div className="testing lg:ml-[10px] xl:ml-[60px] flex flex-col lg:gap-y-[32px] mb-[20px] relative ">
                     {process.points.map((point, index) => (
-                      <li
+                      <p
                         key={point}
                         className="text-lg lg:text-[24px] xl:leading-[20px] 2xl:leading-[20px] "
                       >
                         {point}
-                      </li>
+                      </p>
                     ))}
-                  </ul>
+                  </div>
                 </div>
                 <hr
                   className={`Line lg:ml-[10px] xl:ml-[60px] ${

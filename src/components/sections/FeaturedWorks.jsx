@@ -82,9 +82,9 @@ const FeaturedWorks = () => {
           <h2
             ref={featuredTitle}
             id="featured_title"
-            className=" text-[var(--text-change)] col-span-4 lg:col-span-4 xl:col-span-10 font-semibold text-[2.3rem] md:text-[3.5rem]"
+            className=" text-[var(--text-change)] max-md:text-center col-span-4 lg:col-span-4 xl:col-span-10 font-semibold text-[2.3rem] md:text-[3.5rem]"
           >
-            Featured works
+            Recent Projects
           </h2>
           {/* <button
             className="col-span-4 lg:col-span-4 xl:col-span-2 justify-self-start lg:justify-self-end text-gray-600 text-xl 
