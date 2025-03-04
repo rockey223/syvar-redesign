@@ -41,7 +41,8 @@ const TestSection = () => {
           { scale: 220, x: "-100vw", duration: 5 },
           { scale: 1, x: 0, duration: 5 }
         )
-        .fromTo(heroImage.current, { opacity: 1,duration: 1 }, { opacity: 0,duration: 1  }, ">")
+        .to(heroImage.current,{y: -200, ease: "none",duration: 5},"<")
+        .fromTo(heroImage.current, { opacity: 1,duration: 1 }, { opacity: 0,duration: 1  }, "+=1")
 
       .to(heroText.current, {y: -300,duration: 3 })
       .to(heroText.current, {fontSize: "6rem",duration: 2 },"<")
@@ -56,13 +57,15 @@ const TestSection = () => {
         id="hero_section"
         className="h-screen w-full overflow-hidden relative "
       >
+        {/* <video src="/videos/adept.webm" ref={heroImage} loop muted autoPlay className="w-full h-full fixed z-[-1] inset-0 object-cover" ></video> */}
+        <p className="absolute top-1/2 -translate-y-1/2 text-black left-[60px] text-5xl leading-[150%] uppercase font-bold w-2/5">Your vision and our innovation transform technology experiences together.</p>
         <Image
           ref={heroImage}
-          src={"/images/photo.avif"}
+          src={"/images/land.jpg"}
           width={1000}
           height={1000}
           alt="as"
-          className="w-full h-full fixed z-[-1] inset-0 object-cover"
+          className="w-full h-full fixed z-[-1] scale-90 inset-0 object-contain"
         />
         <div
           ref={maskref}
