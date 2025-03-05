@@ -33,7 +33,8 @@ const WorkCard = ({ work, index }) => {
 
   return (
     <Link
-      href={`/project/${work.slug}`}
+      // href={`/project/${work.slug}`}
+      href={work.link}
       ref={container}
       scroll={true}
       className={`view group work_card flex flex-col gap-2 relative w-full 

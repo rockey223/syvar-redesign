@@ -74,13 +74,13 @@ const Contact = ({ ref, bgRef, closeContact }) => {
         ref={bgRef}
         title="Close"
         onClick={closeContact}
-        className="close fixed top-0 left-0 right-0 bottom-0 backdrop-blur-md dark w-screen h-screen bg-[#0002] opacity-100 z-10 pointer-events-auto cursor-pointer"
+        className="close fixed top-0 left-0 right-0 bottom-0 backdrop-blur-md dark w-screen h-screen bg-[#0002] opacity-100 z-[99] pointer-events-auto cursor-pointer"
       />
       <div
         ref={ref}
         data-lenis-prevent
         id="modal"
-        className="contact-content bg-white w-[calc(100%-2rem)] lg:max-w-[44rem] z-20 rounded-2xl md:rounded-lg md:pt-[1.5rem] pt-4 px-4 pb-8 md:px-[2rem] md:pb-[4rem] max-h-[calc(100%-2rem)] bottom-auto overflow-y-auto fixed right-4 top-4 origin-[center_right] shadow-[0_10px_38px_-10px_#0e121659,0_10px_20px_-15px_#0e12163] pointer-events-auto"
+        className="contact-content bg-white w-[calc(100%-2rem)] lg:max-w-[44rem] z-[100] rounded-2xl md:rounded-lg md:pt-[1.5rem] pt-4 px-4 pb-8 md:px-[2rem] md:pb-[4rem] max-h-[calc(100%-2rem)] bottom-auto overflow-y-auto fixed right-4 top-4 origin-[center_right] shadow-[0_10px_38px_-10px_#0e121659,0_10px_20px_-15px_#0e12163] pointer-events-auto"
         role="dialog"
       >
         <div className="sticky flex top-0 items-center justify-end pointer-events-none">

@@ -66,7 +66,7 @@ const Cursor = () => {
         ref={cursorText}
         className="cursor-text text-[5px] text-white font-medium opacity-0"
       >
-        View
+        Visit
       </span>
     </div>
   );
