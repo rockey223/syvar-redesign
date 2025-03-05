@@ -26,67 +26,128 @@ const TestSection = () => {
   const mainText = useRef();
   useGSAP(() => {
     let mm = gsap.matchMedia(); // Initialize matchMedia
-  
+
     mm.add("(max-width: 768px)", () => {
       // Mobile animation
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: "#hero_section",
-          start: "top top",
-          end: "+=500",
-          scrub: 1,
-          pin: true,
-        },
-      })
-        .fromTo(heroText.current, { scale: 220, x: "-100vw" }, { scale: 1, x: 0, duration: 5 })
-        .fromTo(heroImage.current, { scale: 1.2 }, { y: -200, ease: "none", duration: 5 }, "<") // Scale is 1 on mobile
-        .to(mainText.current,{ y: -300, ease: "none", duration: 5,opacity: 0 }, "<") // Scale is 1 on mobile
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: "#hero_section",
+            start: "top top",
+            end: "+=500",
+            scrub: 1,
+            pin: true,
+          },
+        })
+        .fromTo(
+          heroText.current,
+          { scale: 220, x: "-100vw" },
+          { scale: 1, x: 0, duration: 5 }
+        )
+        .fromTo(
+          heroImage.current,
+          { scale: 1.2 },
+          { y: -200, ease: "none", duration: 5 },
+          "<"
+        ) // Scale is 1 on mobile
+        .to(
+          mainText.current,
+          { y: -300, ease: "none", duration: 5, opacity: 0 },
+          "<"
+        ) // Scale is 1 on mobile
         .to(heroImage.current, { opacity: 0, duration: 2 }, "+=0.5")
         .to(heroText.current, { y: -300, duration: 3 })
         .to(heroText.current, { fontSize: "3rem", duration: 2 }, "<") // Adjust font size for mobile
         .to(heroText.current, { opacity: 0, y: -450, duration: 3 }, "+=0.5")
-        .fromTo("#services_section", { opacity: 0, y: 300 }, { opacity: 1, y: 0, duration: 3 }, "<");
+        .fromTo(
+          "#services_section",
+          { opacity: 0, y: 300 },
+          { opacity: 1, y: 0, duration: 3 },
+          "<"
+        );
     });
-  
+
     mm.add("(min-width: 769px)", () => {
       // Desktop animation
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: "#hero_section",
-          start: "top top",
-          end: "+=500",
-          scrub: 1,
-          pin: true,
-        },
-      })
-        .fromTo(heroText.current, { scale: 220, x: "-100vw" }, { scale: 1, x: 0, duration: 5 })
-        .fromTo(heroImage.current, { scale: 0.9 }, { y: -200, ease: "none", duration: 5 }, "<") 
-        .to(mainText.current,{ y: -300, ease: "none", duration: 5,opacity:0 }, "<") 
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: "#hero_section",
+            start: "top top",
+            end: "+=500",
+            scrub: 1,
+            pin: true,
+          },
+        })
+        .fromTo(
+          heroText.current,
+          { scale: 220, x: "-100vw" },
+          { scale: 1, x: 0, duration: 5 }
+        )
+        .fromTo(
+          heroImage.current,
+          { scale: 0.9 },
+          { y: -200, ease: "none", duration: 5 },
+          "<"
+        )
+        .to(
+          mainText.current,
+          { y: -300, ease: "none", duration: 5, opacity: 0 },
+          "<"
+        )
         .to(heroImage.current, { opacity: 0, duration: 2 }, "+=0.5")
         .to(heroText.current, { y: -300, duration: 3 })
         .to(heroText.current, { fontSize: "6rem", duration: 2 }, "<")
         .to(heroText.current, { opacity: 0, y: -450, duration: 3 }, "+=0.5")
-        .fromTo("#services_section", { opacity: 0, y: 300 }, { opacity: 1, y: 0, duration: 3 }, "<");
+        .fromTo(
+          "#services_section",
+          { opacity: 0, y: 300 },
+          { opacity: 1, y: 0, duration: 3 },
+          "<"
+        );
     });
-  
   }, []);
-  
+
   return (
-    <div className="relative" >
+    <div className="relative">
       <section
         id="hero_section"
         className="h-screen w-full overflow-hidden relative "
       >
-        {/* <video src="/videos/adept.webm" ref={heroImage} loop muted autoPlay className="w-full h-full fixed z-[-1] inset-0 object-cover" ></video> */}
-        <p ref={mainText} className="absolute top-1/2 -translate-y-1/2 text-black lg:left-[60px] left-1/2 max-lg:px-[20px] max-lg:top-[40%] max-lg:-translate-x-1/2 text-[24px] md:text-3xl lg:text-5xl w-full lg:w-2/5 lg:leading-[150%] uppercase font-extrabold ">Your vision and our innovation transform technology experiences together.</p>
+        <div className="fixed h-full w-full">
+
+        <div className="flex w-full justify-center lg:justify-between items-center h-full relative -z-[2] flex-col lg:flex-row">
+          {/* <div> */}
+            <p
+              ref={mainText}
+              className="  h-full flex justify-center items-center max-lg:text-center text-black max-lg:px-[20px] text-[24px] md:text-5xl lg:text-5xl md:leading-[120%] lg:pl-[60px] leading-[120%] uppercase font-extrabold "
+              >
+              Your vision and our innovation transform technology experiences
+              together.
+            </p>
+          {/* </div> */}
+          <div className="h-full">
+            <Image
+              ref={heroImage}
+              src={"/images/land.png"}
+              width={1000}
+              height={1000}
+              alt="as"
+              className="w-full h-full relative z-[-3] inset-0   object-scale-down"
+              />
+          </div>
+              </div>
+          {/* <p ref={mainText} className="w-1/2  top-1/2 -translate-y-1/2 text-black lg:left-[60px] left-1/2 max-lg:px-[20px] max-lg:top-[40%] max-lg:-translate-x-1/2 text-[24px] md:text-3xl lg:text-5xl lg:leading-[150%] uppercase font-extrabold ">Your vision and our innovation transform technology experiences together.</p>
         <Image
           ref={heroImage}
-          src={"/images/land.jpg"}
+          src={"/images/land.png"}
           width={1000}
           height={1000}
           alt="as"
-          className="w-full h-full fixed z-[-1] inset-0 max-lg:top-[20%] max-sm:-left-[15%] max-lg:object-contain "
-        />
+          className="w-1/2 h-full fixed z-[-3] inset-0 max-lg:top-[20%] max-sm:-left-[15%] object-cover"
+        /> */}
+        </div>
+        {/* <video src="/videos/adept.webm" ref={heroImage} loop muted autoPlay className="w-full h-full fixed z-[-1] inset-0 object-cover" ></video> */}
         <div
           ref={maskref}
           className="relative mask h-full w-full bg-[var(--bg-change)] flex flex-col justify-center items-center mix-blend-multiply"
