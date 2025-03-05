@@ -88,13 +88,13 @@ const Footer = () => {
             href={"/"}
             className="text-xl md:text-base 2xl:text-xl hover:text-yellow-300"
           >
-            +977 9843636520
+            +977 9840575636
           </Link>
           <Link
             href={"/"}
             className="text-xl md:text-base 2xl:text-xl hover:text-yellow-300"
           >
-            info@syvartech.com.np
+            info@syvar.com.np
           </Link>
         </div>
         <div className="mt-[50px] lg:mt-0 2xl:mt-[100px] md:mt-[100px] flex justify-center gap-y-[80px] md:gap-y-[100px] lg:justify-between flex-col lg:flex-row items-center h-[300px] ">

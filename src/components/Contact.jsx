@@ -3,6 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 const services = [
   "Product Design & UX",
@@ -14,7 +15,7 @@ const services = [
 const budgets = ["Under $5k", "$5k-$10k", "$10k-$20k", "$20k-$50k", "$50k+"];
 
 const formSchema = z.object({
-  challenge: z
+  challenges: z
     .array(z.string())
     .min(1, "Please select what you want us to help with"),
   budget: z.string().min(3, "Please select your budget"),
@@ -37,7 +38,7 @@ const Contact = ({ ref, bgRef, closeContact }) => {
   } = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      challenge: [],
+      challenges: [],
       budget: "",
       name: "",
       email: "",
@@ -46,7 +47,7 @@ const Contact = ({ ref, bgRef, closeContact }) => {
   });
 
   const addBudget = (e) => {
-    console.log(e);
+    // console.log(e);
 
     setValue("budget", e.target.value);
     setBudget(e.target.value);
@@ -57,14 +58,20 @@ const Contact = ({ ref, bgRef, closeContact }) => {
       ? selectedServices.filter((item) => item !== service)
       : [...selectedServices, service];
     setSelectedServices(updatedServices);
-    setValue("challenge", updatedServices);
+    setValue("challenges", updatedServices);
   };
 
   const submitForm = (data) => {
     console.log(data);
-    reset();
-    setBudget("");
-    setSelectedServices([]);
+    axios
+      .post("/api/contactUsEmail", {
+        ...data,
+      })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+    // reset();
+    // setBudget("");
+    // setSelectedServices([]);
   };
 
   return (
@@ -128,9 +135,9 @@ const Contact = ({ ref, bgRef, closeContact }) => {
                     </button>
                   ))}
                 </div>
-                {errors.challenge && (
+                {errors.challenges && (
                   <span className="text-red-700 text-base">
-                    {errors.challenge.message}
+                    {errors.challenges.message}
                   </span>
                 )}
               </fieldset>
