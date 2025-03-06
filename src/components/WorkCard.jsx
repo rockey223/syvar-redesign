@@ -29,6 +29,10 @@ const WorkCard = ({ work, index }) => {
         },
       }
     );
+
+
+   
+
   }, [index]);
 
   return (

@@ -17,30 +17,12 @@ const serviceList = [
 const ServicesSection = () => {
   const services = useRef();
 
-  useGSAP(() => {
-    gsap.fromTo(
-      services.current,
-      {
-        opacity: 0,
-        scale: 0.5
-      },
-      {
-        opacity: 1,
-        scale: 1,
-        scrollTrigger:{
-          trigger: services.current,
-          start: "top bottom",
-          end: "top 80%",
-          scrub: true
-        }
-      }
-    );
-  });
+  
 
   return (
-    <section id="services_section" >
-      <div className="h-full lg:h-[100vh] bg-[var(--bg-change)] w-full py-[100px] lg:py-[149px] flex flex-col gap-16 md:gap-[104px]">
-        <div ref={services} className="h-full flex flex-col justify-center intems-center gap-20">
+    <section id="services_section">
+      <div className="h-full lg:h-[100vh] bg-[var(--bg-change)] w-full py-[100px] lg:py-[149px] flex flex-col gap-16 md:gap-[104px] ">
+        <div  ref={services}  className="h-full flex flex-col justify-center intems-center gap-20 " data-aos="fade-up">
           <div className="services_header w-full text-center">
             <h2 className="px-1 text-gray-200 text-4xl md:text-[64px] font-medium">
               Delivering on your Expectations
@@ -51,7 +33,7 @@ const ServicesSection = () => {
               {serviceList.map((service, index) => (
                 <li
                   key={index}
-                  className="flex justify-center items-center py-2 lg:py-3 px-4 lg:px-[30px] rounded-full border-2 lg:border-[2px] border-[var(--text-change)] text-[var(--text-change)] md:text-lg"
+                  className="flex justify-center items-center py-2 lg:py-3 px-4 lg:px-[30px] rounded-full border-2 lg:border-[2px] border-[var(--text-change)] text-[var(--text-change)] text-sm md:text-lg"
                 >
                   {service}
                 </li>
@@ -59,7 +41,7 @@ const ServicesSection = () => {
             </ul>
           </div>
           <div className=" flex flex-col px-2 xl:px-[100px] 2xl:px-[530px] justify-center items-center gap-10">
-            <p className="max-w-[800px] text-center text-xl md:px-4 text-[var(--text-change)]">
+            <p className="max-w-[800px] text-center text-base md:text-xl px-4 text-[var(--text-change)]">
               We simplify the complex by breaking it down into clear, actionable
               steps. Our approach ensures efficiency, quality, and a seamless
               experience for you.

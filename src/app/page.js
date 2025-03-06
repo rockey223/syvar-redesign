@@ -7,9 +7,9 @@ import TestSection from "@/components/sections/TestSection";
 export default function Home() {
   return (
     <>
-    <TestSection/>
-      {/* <HeroSection /> */}
-      {/* <ServicesSection /> */}
+    {/* <TestSection/> */}
+      <HeroSection />
+      <ServicesSection />
       <FeaturedWorks />
       <Process />
 

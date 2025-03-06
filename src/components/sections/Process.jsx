@@ -119,8 +119,8 @@ const Process = () => {
     >
       <div className="process_wrapper  flex flex-col lg:flex-row lg:justify-between max-lg:px-[30px] xl:pb-0 2xl:pb-[100px] pb-[100px]">
         {/* Left Section */}
-        <div className="left w-full lg:w-1/2 xl:w-1/2 max-h-[1000px] lg:h-screen flex pt-[60px] ">
-          <div className="process_left_content_wrapper xl:pl-[60px] lg:pl-[60px]">
+        <div className="left w-full lg:w-1/2 xl:w-1/2 max-h-[1000px] lg:h-screen flex  ">
+          <div className="process_left_content_wrapper xl:pl-[60px] lg:pl-[60px] pt-[60px]">
             <h2 className="font-semibold text-[2.5rem] md:text-[3rem] xl:text-[3rem] 2xl:text-[4rem] mt-[30px] mb-[20px]">
               Our Process
             </h2>

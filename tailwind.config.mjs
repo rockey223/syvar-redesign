@@ -18,6 +18,9 @@ export default {
         '100%': { transform: 'translateY(-100%)' },
       },
     },
+    clipPath: {
+      custom: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+    },
     animation: {
       'ease-out-elastic': 'ease-out-elastic 1s ease-out',
     },

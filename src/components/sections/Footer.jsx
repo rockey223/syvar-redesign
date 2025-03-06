@@ -13,14 +13,14 @@ import { show } from "@/utils/contactSlice";
 import Lenis from "lenis";
 const socialMediaIcons = [
   {
-    title: "",
+    title: "Facebook",
     icon: <FaFacebookF />,
-    link: "",
+    link: "https://www.facebook.com/syvartech/",
   },
   {
     title: "Instagram",
     icon: <RiInstagramFill />,
-    link: "",
+    link: "https://www.instagram.com/syvartech",
   },
   //   {
   //     title: "",

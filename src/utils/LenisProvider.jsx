@@ -9,12 +9,15 @@ import { store } from "@/app/store";
 import { hide, show } from "./contactSlice";
 import Cursor from "@/components/Cursor";
 
+
+
 gsap.registerPlugin(useGSAP);
 
 const LenisProvider = ({ children }) => {
   const contactContent = useRef(null);
   const bgRef = useRef(null);
   useEffect(() => {
+   
     const lenis = new Lenis({
       // duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
