@@ -51,11 +51,13 @@ const TestSection = () => {
           { y: -200, ease: "none", duration: 5 },
           "<"
         ) // Scale is 1 on mobile
-        .to(
-          mainText.current,
-          { y: -300, ease: "none", duration: 5, opacity: 0 },
-          "<"
-        ) // Scale is 1 on mobile
+        // .to(
+        //   mainText.current,
+        //   { y: -300, ease: "none", duration: 5, opacity: 0 },
+        //   "<"
+        // ) // Scale is 1 on mobile
+        .to(".bg-image", { opacity: 0, duration: 2 }, "=+0.5")
+        .to(".bg-text", { opacity: 0, duration: 2 }, "<")
         .to(heroImage.current, { opacity: 0, duration: 2 }, "+=0.5")
         .to(heroText.current, { y: -300, duration: 3 })
         .to(heroText.current, { fontSize: "3rem", duration: 2 }, "<") // Adjust font size for mobile
