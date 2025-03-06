@@ -33,7 +33,7 @@ const Contact = ({ ref, bgRef, closeContact }) => {
     formState: { errors, isSubmitting },
     handleSubmit,
     reset,
-    getValues,
+    setError,
     setValue,
   } = useForm({
     resolver: zodResolver(formSchema),
@@ -51,6 +51,7 @@ const Contact = ({ ref, bgRef, closeContact }) => {
 
     setValue("budget", e.target.value);
     setBudget(e.target.value);
+    setError("budget",{message: ""})
   };
 
   const toggleService = (service) => {
@@ -59,21 +60,19 @@ const Contact = ({ ref, bgRef, closeContact }) => {
       : [...selectedServices, service];
     setSelectedServices(updatedServices);
     setValue("challenges", updatedServices);
+    setError("challenges",{message: ""})
   };
-
-  const submitForm = (data) => {
-    console.log(data);
-    axios
-      .post("/api/contactUsEmail", {
-        ...data,
-      })
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-    // reset();
-    // setBudget("");
-    // setSelectedServices([]);
+  const submitForm = async (data) => {
+    try {
+      await axios.post("/api/contactUsEmail", data);
+      reset();
+      setBudget("");
+      setSelectedServices([]);
+    } catch (err) {
+      setError("root", { message: "Something went wrong" });
+    }
   };
-
+  
   return (
     <>
       <div
@@ -223,16 +222,24 @@ const Contact = ({ ref, bgRef, closeContact }) => {
                       {errors.message.message}
                     </span>
                   )}
+                  {errors.root?.message && (
+                    <span className="text-red-700 text-base">
+                      {errors.root.message}
+                    </span>
+                  )}
                 </div>
               </fieldset>
             </div>
 
             <button
               type="submit"
-              className="text-white bg-black inflex py-0 px-2 relative rounded-xl"
+              className="text-white bg-black flex py-0 px-2 relative rounded-xl disabled:bg-gray-500"
               disabled={isSubmitting}
             >
-              <div className="px-4 py-2 inline-flex">Submit</div>
+              <div className="px-4 py-2 inline-flex">
+
+                {isSubmitting ? "Submitting" : "Submit"}
+              </div>
             </button>
           </form>
         </div>
