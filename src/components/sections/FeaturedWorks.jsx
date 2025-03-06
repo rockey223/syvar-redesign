@@ -78,10 +78,10 @@ const FeaturedWorks = () => {
   return (
     <section id="featured_section">
       <div className="w-full bg-[var(--bg-change)] px-5 md:pt-16 xl:pt-20 2xl:pt-0 xl:px-[60px] lg:px-[50px] lg:pb-[100px]">
-        <div className="featured_header col-span-full grid grid-cols-4 lg:grid-cols-8 xl:grid-cols-12 gap-x-5 ">
+        <div  ref={featuredTitle}
+            id="featured_title" className="featured_header col-span-full grid grid-cols-4 lg:grid-cols-8 xl:grid-cols-12 gap-x-5 ">
           {/* <h2
-            ref={featuredTitle}
-            id="featured_title"
+           
             className=" text-[var(--text-change)] max-md:text-center col-span-4 lg:col-span-4 xl:col-span-10 font-semibold text-[2.3rem] md:text-[3.5rem]"
           >
             Recent Projects

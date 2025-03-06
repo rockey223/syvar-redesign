@@ -7,7 +7,7 @@ import { useGSAP } from "@gsap/react";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { FaArrowDown } from "react-icons/fa";
+import { IoMdArrowDown } from "react-icons/io";
 
 const serviceList = [
   "Web Development",
@@ -127,12 +127,12 @@ const TestSection = () => {
               className="h-full w-full object-cover"
             />
           </div>
-          <div className="bg-text max-w-[648px] m-auto">
-            <h1 className="w-full text-center text-gray-100 text-[85px] leading-[120%] font-semibold">
+          <div className="bg-text max-w-[648px] m-auto max-md:px-5">
+            <h1 className="w-full text-center text-gray-100  text-5xl lg:text-[85px] leading-[120%] font-semibold">
               Dream big. We'll digitize it.
             </h1>
 
-            <p className="text-center text-base 2xl:text-xl text-gray-500 ">
+            <p className="text-center text-base 2xl:text-xl text-gray-500 mt-8">
               Your vision and our innovation transform technology experiences
               together.
             </p>
@@ -163,7 +163,7 @@ const TestSection = () => {
             <div className="h-full lg:h-[100vh]  w-full py-[100px] lg:py-[149px] flex flex-col gap-16 md:gap-[104px]">
               <div
                 ref={services}
-                className="h-full flex flex-col justify-center intems-center "
+                className="h-full flex flex-col justify-center items-center "
               >
                 <div className="services_header w-full text-center">
                   <h2 className="px-1 text-white text-4xl md:text-[48px] font-bold tracking-wide leading-snug">
@@ -189,12 +189,12 @@ const TestSection = () => {
                     and a seamless experience for you.
                   </p>
                   {/* <button className="px-5 py-[10px] flex items-center justify-center border-[4px] border-gray-200 text-gray-900 bg-gray-200 rounded-full font-semibold text-xl">More About Services</button> */}
-                  <div className="text-[var(--text-change)] brightness-75 flex flex-col text-center justify-center items-center cursor-pointer group">
-                    <span>work archive</span>
-                    <span className="group-hover:animate-bounce">
-                      <FaArrowDown />
-                    </span>
-                  </div>
+                </div>
+                <div className="flex flex-col text-base text-[var(--text-change)] brightness-50 justify-center items-center mt-52 group cursor-pointer">
+                  <span >work archive</span>
+                  <span className="text-xl group-hover:animate-bounce mt-3">
+                    <IoMdArrowDown />
+                  </span>
                 </div>
               </div>
             </div>
