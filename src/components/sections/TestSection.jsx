@@ -194,7 +194,7 @@ const TestSection = () => {
                 </div>
                 <div className="flex flex-col text-base text-[var(--text-change)] brightness-50 justify-center items-center mt-52 group cursor-pointer">
                   <span >work archive</span>
-                  <span className="text-xl group-hover:animate-bounce mt-3">
+                  <span className="text-xl group-hover:animate-bounce mt-1 lg:mt-3">
                     <IoMdArrowDown />
                   </span>
                 </div>
