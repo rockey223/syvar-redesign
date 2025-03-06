@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { FaArrowDown } from "react-icons/fa";
 
 const serviceList = [
   "Web Development",
@@ -188,6 +189,12 @@ const TestSection = () => {
                     and a seamless experience for you.
                   </p>
                   {/* <button className="px-5 py-[10px] flex items-center justify-center border-[4px] border-gray-200 text-gray-900 bg-gray-200 rounded-full font-semibold text-xl">More About Services</button> */}
+                  <div className="text-[var(--text-change)] brightness-75 flex flex-col text-center justify-center items-center cursor-pointer group">
+                    <span>work archive</span>
+                    <span className="group-hover:animate-bounce">
+                      <FaArrowDown />
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
