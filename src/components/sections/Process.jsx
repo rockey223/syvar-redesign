@@ -119,7 +119,7 @@ const Process = () => {
     >
       <div className="process_wrapper  flex flex-col lg:flex-row lg:justify-between max-lg:px-[30px] xl:pb-0 2xl:pb-[100px] pb-[100px]">
         {/* Left Section */}
-        <div className="left w-full lg:w-1/2 xl:w-1/2 max-h-[1000px] lg:h-screen flex pt-[60px] lg:border-r-[2px] border-black">
+        <div className="left w-full lg:w-1/2 xl:w-1/2 max-h-[1000px] lg:h-screen flex pt-[60px] ">
           <div className="process_left_content_wrapper xl:pl-[60px] lg:pl-[60px]">
             <h2 className="font-semibold text-[2.5rem] md:text-[3rem] xl:text-[3rem] 2xl:text-[4rem] mt-[30px] mb-[20px]">
               Our Process
@@ -145,7 +145,7 @@ const Process = () => {
         </div>
 
         {/* Right Section */}
-        <div className="right w-full lg:w-3/6 xl:w-1/2 max-lg:mt-[65px]  ">
+        <div className="right w-full lg:w-3/6 xl:w-1/2 max-lg:mt-[65px] lg:border-l-[2px] border-black ">
           <div className="right-content-wrapper xl:last:pb-[0vh] 2xl:last:pb-[17vh] lg:last:pb-[10vh]  ">
             {processes.map((process, index) => (
               <React.Fragment key={process.title + index}>

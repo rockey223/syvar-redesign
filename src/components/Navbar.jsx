@@ -12,7 +12,7 @@ const Navbar = () => {
     <>
       <div
         id="navbar"
-        className="w-full max-w-[1920px] fixed left-0 z-50 opacity-0"
+        className="w-full max-w-[1920px] fixed left-1/2 -translate-x-1/2 z-50 opacity-0 py-2"
       >
         <div className="blurnav">
           <div></div>

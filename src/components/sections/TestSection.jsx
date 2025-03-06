@@ -8,6 +8,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { IoMdArrowDown } from "react-icons/io";
+import { useDispatch } from "react-redux";
+import { show } from "@/utils/contactSlice";
 
 const serviceList = [
   "Web Development",
@@ -112,7 +114,7 @@ const TestSection = () => {
         );
     });
   }, []);
-
+const dispatch = useDispatch()
   return (
     <div className="relative">
       <section
@@ -129,7 +131,7 @@ const TestSection = () => {
               className="h-full w-full object-cover"
             />
           </div>
-          <div className="bg-text max-w-[648px] m-auto max-md:px-5">
+          <div className="bg-text max-w-[648px] m-auto max-md:px-5 flex flex-col justify-center items-center">
             <h1 className="w-full text-center text-gray-100  text-5xl lg:text-[85px] leading-[120%] font-semibold">
               Dream big. We'll digitize it.
             </h1>
@@ -138,6 +140,7 @@ const TestSection = () => {
               Your vision and our innovation transform technology experiences
               together.
             </p>
+            <button type="button" className="mt-10 w-[146px] h-[50px] flex justify-center items-center text-base text-white px-5 py-[18px] rounded-xl border-[1px] border-[#545454] cursor-pointer" onClick={()=>dispatch(show())} >Get in Touch</button>
           </div>
 
           {/* <p ref={mainText} className="w-1/2  top-1/2 -translate-y-1/2 text-black lg:left-[60px] left-1/2 max-lg:px-[20px] max-lg:top-[40%] max-lg:-translate-x-1/2 text-[24px] md:text-3xl lg:text-5xl lg:leading-[150%] uppercase font-extrabold ">Your vision and our innovation transform technology experiences together.</p>
@@ -153,7 +156,7 @@ const TestSection = () => {
         {/* <video src="/videos/adept.webm" ref={heroImage} loop muted autoPlay className="w-full h-full fixed z-[-1] inset-0 object-cover" ></video> */}
         <div
           ref={maskref}
-          className="relative mask h-full w-full bg-[var(--bg-change)] flex flex-col justify-center items-center mix-blend-multiply"
+          className="relative mask h-full w-full bg-[var(--bg-change)] flex flex-col justify-center items-center mix-blend-multiply pointer-events-none"
         >
           <h1
             ref={heroText}
