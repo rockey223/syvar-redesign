@@ -12,16 +12,17 @@ const HeroSection = () => {
   const heroImage = useRef();
   const maskref = useRef();
   useGSAP(() => {
-    let splitText = new SplitType(".Heading",{types: "chars"});
-    let chars = splitText.chars
-    gsap.fromTo(chars,{
-      y: 100,
-      opacity: 0
-    }, {
-      y: 0,
-      opacity: 1,
-      stagger: 0.02
-    });
+    let splitText = new SplitType(".Heading", { types: "chars" });
+    let chars = splitText.chars;
+    const tl = gsap.timeline();
+    tl.to(".bg_text", { y: 0 })
+      .to(chars, {
+        y: 0,
+        opacity: 1,
+        stagger: 0.02,
+      })
+      .to(".second_text", { y: 0, opacity: 1 }, "<")
+      .to(".getTouchBtn", { y: 0, opacity: 1 }, "<");
   });
   // useGSAP(() => {
   //   gsap.timeline({
@@ -47,18 +48,18 @@ const HeroSection = () => {
       id="hero_section"
       className="h-screen w-full bg-[url('/images/bg.png')] bg-no-repeat bg-cover overflow-hidden relative"
     >
-      <div className="bg-text max-w-[650px] h-full m-auto max-md:px-5 flex flex-col justify-center items-center relative">
-        <div className="[clip-path:polygon(0_0,_100%_0,_100%_100%,_0%_100%)] Heading w-full text-center text-gray-100  text-4xl md:text-[85px] leading-[120%] font-semibold ">
-          Dream big. <br/> We'll digitize it.
+      <div className=" max-w-[650px] h-full m-auto max-md:px-5 flex flex-col justify-center items-center relative">
+        <div className="bg-text [clip-path:polygon(0_0,_100%_0,_100%_100%,_0%_100%)] Heading w-full text-center  translate-y-100 text-gray-100  text-4xl md:text-[85px] leading-[120%] font-semibold ">
+          Dream big. <br /> We'll digitize it.
         </div>
 
-        <p className="text-center text-base md:text-xl 2xl:text-xl text-gray-500 mt-8">
+        <p className="second_text text-center text-base md:text-xl 2xl:text-xl translate-y-16 opacity-0 text-gray-500 mt-8">
           Your vision and our innovation transform technology experiences
           together.
         </p>
         <button
           type="button"
-          className="mt-10 w-[146px] h-[50px] flex justify-center items-center text-base text-white px-5 py-[18px] rounded-xl border-[1px] border-[#545454] cursor-pointer transition-all duration-150 ease-in-out hover:shadow-[0px_1px_10px_0px_rgb(255,255,255,50%)] hover:translate-y-1"
+          className="getTouchBtn translate-y-16 opacity-0 mt-10 w-[146px] h-[50px] flex justify-center items-center text-base text-white px-5 py-[18px] rounded-xl border-[1px] border-[#545454] cursor-pointer hover:shadow-[0px_1px_10px_0px_rgb(255,255,255,50%)] hover:translate-y-1"
           onClick={() => dispatch(show())}
         >
           Get in Touch
