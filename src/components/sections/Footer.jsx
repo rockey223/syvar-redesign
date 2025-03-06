@@ -73,7 +73,7 @@ const Footer = () => {
   const dispatch = useDispatch();
   return (
     <>
-      <div className="max-mb-[900px] mb-[900px]" />
+      <div className="max-w-[1920px] max-mb-[900px] mb-[900px]" />
       <footer className=" max-h-[900px] h-screen bg-black w-[100.01%] fixed bottom-0 right-1/2 translate-x-1/2 -z-10 px-[30px] lg:px-[60px] xl:px-[60px] py-[80px]">
         <div className="footer_header">
           <h1 className="text-[32px] xl:text-[64px] text-white font-bold ">
