@@ -140,7 +140,7 @@ const dispatch = useDispatch()
               Your vision and our innovation transform technology experiences
               together.
             </p>
-            <button type="button" className="mt-10 w-[146px] h-[50px] flex justify-center items-center text-base text-white px-5 py-[18px] rounded-xl border-[1px] border-[#545454] cursor-pointer transition-all duration-150 ease-in-out hover:shadow-[0px_5px_10px_0px_rgb(255,255,255,50%)] hover:translate-y-1" onClick={()=>dispatch(show())} >Get in Touch</button>
+            <button type="button" className="mt-10 w-[146px] h-[50px] flex justify-center items-center text-base text-white px-5 py-[18px] rounded-xl border-[1px] border-[#545454] cursor-pointer transition-all duration-150 ease-in-out hover:shadow-[0px_1px_10px_0px_rgb(255,255,255,50%)] hover:translate-y-1" onClick={()=>dispatch(show())} >Get in Touch</button>
           </div>
 
           {/* <p ref={mainText} className="w-1/2  top-1/2 -translate-y-1/2 text-black lg:left-[60px] left-1/2 max-lg:px-[20px] max-lg:top-[40%] max-lg:-translate-x-1/2 text-[24px] md:text-3xl lg:text-5xl lg:leading-[150%] uppercase font-extrabold ">Your vision and our innovation transform technology experiences together.</p>
