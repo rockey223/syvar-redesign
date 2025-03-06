@@ -193,7 +193,7 @@ const TestSection = () => {
                   {/* <button className="px-5 py-[10px] flex items-center justify-center border-[4px] border-gray-200 text-gray-900 bg-gray-200 rounded-full font-semibold text-xl">More About Services</button> */}
                 </div>
                 <div className="flex flex-col text-base text-[var(--text-change)] brightness-50 justify-center items-center mt-52 group cursor-pointer">
-                  <span >work archive</span>
+                  <span >Work Archive</span>
                   <span className="text-xl group-hover:animate-bounce mt-1 lg:mt-3">
                     <IoMdArrowDown />
                   </span>
