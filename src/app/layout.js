@@ -6,7 +6,7 @@ import Contact from "@/components/Contact";
 import ReduxProvider from "@/utils/ReduxProvider";
 import Navbar from "@/components/Navbar";
 export const metadata = {
-  title: "Syver Technology pvt. ltd",
+  title: "Syvar Technology pvt. ltd",
   description: "",
 };
 export default function RootLayout({ children }) {
