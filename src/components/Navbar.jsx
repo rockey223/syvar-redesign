@@ -35,7 +35,7 @@ const Navbar = () => {
           <div className="contact-btn">
             <MagneticIcon>
               <button
-                className="h-10 md:h-12 w-32 md:w-36 bg-slate-800 text-sm text-white font-normal  rounded-full uppercase"
+                className="h-10 md:h-12 w-32 md:w-36 bg-black/50  text-md text-white font-normal  rounded-full uppercase"
                 onClick={() => {
                   dispatch(show());
                 }}
