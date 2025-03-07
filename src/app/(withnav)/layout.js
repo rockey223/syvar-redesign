@@ -1,5 +1,5 @@
 import LenisProvider from "@/utils/LenisProvider";
-import "./globals.css";
+import "../globals.css";
 import Footer from "@/components/sections/Footer";
 import ReduxProvider from "@/utils/ReduxProvider";
 import Navbar from "@/components/Navbar";
