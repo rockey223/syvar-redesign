@@ -1,13 +1,11 @@
 import LenisProvider from "@/utils/LenisProvider";
 import "./globals.css";
 import Footer from "@/components/sections/Footer";
-import Head from "next/head";
-import Contact from "@/components/Contact";
 import ReduxProvider from "@/utils/ReduxProvider";
 import Navbar from "@/components/Navbar";
 export const metadata = {
   title: "Syvar Technology pvt. ltd",
-  description: "",
+  description: "We offer tailored, innovative solutions backed by expertise and a proven track record of delivering timely, client-centric results. Search Engine Optimization.",
 };
 export default function RootLayout({ children }) {
   return (
@@ -18,7 +16,6 @@ export default function RootLayout({ children }) {
             <LenisProvider>
               <Navbar />
               {children}
-
               <Footer />
               {/* <Contact/> */}
             </LenisProvider>

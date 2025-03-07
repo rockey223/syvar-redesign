@@ -2,12 +2,16 @@
 import { show } from "@/utils/contactSlice";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import SplitType from "split-type";
-gsap.registerPlugin(ScrollTrigger);
+import { FaArrowDown } from "react-icons/fa";
+import ScrollToPlugin from "gsap/ScrollToPlugin";
+import Link from "next/link";
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const HeroSection = () => {
   const heroText = useRef();
@@ -44,7 +48,7 @@ const HeroSection = () => {
   //     ).fromTo(heroImage.current, { opacity: 1 }, { opacity: 0 },"+=0.2")
   //     // .to(heroText.current, { y: -200 },"<");
   // }, []);
-const dispatch = useDispatch()
+  const dispatch = useDispatch();
   return (
     <section
       id="hero_section"
@@ -65,6 +69,19 @@ const dispatch = useDispatch()
           onClick={() => dispatch(show())}
         >
           Get in Touch
+        </button>
+        <button
+          href="#featured_section"
+          className="text-gray-600 transition-colors duration-300 ease-in-out cursor-pointer hover:text-white/80 group flex flex-col justify-center items-center mt-44"
+          onClick={(e) => {
+            e.preventDefault();
+            gsap.to(window, { duration: 1, scrollTo: "#featured_section" });
+          }}
+        >
+          <span>Work Archive</span>
+          <span className="group-hover:translate-y-2 transition-transform ease-in-out duration-300">
+            <FaArrowDown />
+          </span>
         </button>
       </div>
       <div className="absolute bottom-0 h-[100px] lg:h-[200px] w-full bg-[linear-gradient(180deg,_rgba(0,0,0,0.00)_0%,_#000_100%)]"></div>

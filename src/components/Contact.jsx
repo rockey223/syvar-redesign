@@ -86,7 +86,7 @@ const Contact = ({ ref, bgRef, closeContact }) => {
         ref={ref}
         data-lenis-prevent
         id="modal"
-        className="contact-content bg-white w-[calc(100%-2rem)] lg:max-w-[44rem] z-[100] rounded-2xl md:rounded-lg md:pt-[1.5rem] pt-4 px-4 pb-8 md:px-[2rem] md:pb-[4rem] max-h-[calc(100%-2rem)] bottom-auto overflow-y-auto fixed right-4 top-4 origin-[center_right] shadow-[0_10px_38px_-10px_#0e121659,0_10px_20px_-15px_#0e12163] pointer-events-auto"
+        className="no-scrollbar contact-content bg-white w-[calc(100%-2rem)] lg:max-w-[44rem] z-[100] rounded-2xl md:rounded-lg md:pt-[1.5rem] pt-4 px-4 pb-8 md:px-[2rem] md:pb-[4rem] max-h-[calc(100%-2rem)] bottom-auto overflow-y-auto fixed right-4 top-4 origin-[center_right] shadow-[0_10px_38px_-10px_#0e121659,0_10px_20px_-15px_#0e12163] pointer-events-auto"
         role="dialog"
       >
         <div className="sticky flex top-0 items-center justify-end pointer-events-none">
