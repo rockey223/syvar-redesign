@@ -1,9 +1,11 @@
 "use client";
+import { show } from "@/utils/contactSlice";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
+import { useDispatch } from "react-redux";
 import SplitType from "split-type";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,7 +44,7 @@ const HeroSection = () => {
   //     ).fromTo(heroImage.current, { opacity: 1 }, { opacity: 0 },"+=0.2")
   //     // .to(heroText.current, { y: -200 },"<");
   // }, []);
-
+const dispatch = useDispatch()
   return (
     <section
       id="hero_section"
