@@ -1,5 +1,5 @@
 import LenisProvider from "@/utils/LenisProvider";
-import "../globals.css";
+
 import Footer from "@/components/sections/Footer";
 import ReduxProvider from "@/utils/ReduxProvider";
 import Navbar from "@/components/Navbar";
@@ -10,8 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <>
-      <html lang="en">
-        <body className="w-full">
+     
           <ReduxProvider>
             <LenisProvider>
               <Navbar />
@@ -21,8 +20,7 @@ export default function RootLayout({ children }) {
             </LenisProvider>
           </ReduxProvider>
           {/* {children} */}
-        </body>
-      </html>
+   
     </>
   );
 }
