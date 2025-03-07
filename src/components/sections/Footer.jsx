@@ -85,13 +85,14 @@ const Footer = () => {
         <div className="spacer mt-[30px]" />
         <div className="footer_contact flex flex-col md:flex-row gap-y-[10px] gap-x-[30px] text-gray-600">
           <Link
-            href={"/"}
+            href={"tel:+9779840575636"}
+
             className="text-xl md:text-base 2xl:text-xl hover:text-yellow-300"
           >
             +977 9840575636
           </Link>
           <Link
-            href={"/"}
+            href={"mailto:info@syvar.com.np"}
             className="text-xl md:text-base 2xl:text-xl hover:text-yellow-300"
           >
             info@syvar.com.np
@@ -104,6 +105,7 @@ const Footer = () => {
                 <MagneticIcon key={icon.title}>
                   <Link
                     href={icon.link}
+                    target="_blank"
                     className="text-6xl text-gray-600 hover:text-yellow-400"
                   >
                     {icon.icon}
