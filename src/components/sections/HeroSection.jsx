@@ -84,7 +84,7 @@ const HeroSection = () => {
           </span>
         </button>
       </div>
-      <div className="absolute bottom-0 h-[100px] lg:h-[200px] w-full bg-[linear-gradient(180deg,_rgba(0,0,0,0.00)_0%,_#000_100%)]"></div>
+      <div className="absolute pointer-events-none bottom-0 h-[100px] lg:h-[200px] w-full bg-[linear-gradient(180deg,_rgba(0,0,0,0.00)_0%,_#000_100%)]"></div>
     </section>
   );
 };

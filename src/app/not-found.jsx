@@ -17,7 +17,7 @@ const notfound = () => {
           href={"/"}
           className="h-[50px] flex justify-center items-center text-base text-white/50 px-5 py-[18px] rounded-xl border-[1px] border-[#545454] cursor-pointer hover:shadow-[0px_1px_10px_0px_rgb(255,255,255,50%)] hover:text-white transition-all duration-300 ease-in-out"
         >
-          Get in Touch
+         Go To Home
         </Link>
       </div>
       
