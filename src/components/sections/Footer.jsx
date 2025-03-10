@@ -89,7 +89,7 @@ const Footer = () => {
 
             className="text-xl md:text-base 2xl:text-xl hover:text-yellow-300"
           >
-            +977 9840575636
+            +977 9840575736
           </Link>
           <Link
             href={"mailto:info@syvar.com.np"}
