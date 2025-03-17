@@ -54,7 +54,7 @@ const HeroSection = () => {
       id="hero_section"
       className="h-screen w-full bg-[url('/images/bg.png')] bg-no-repeat bg-cover overflow-hidden relative"
     >
-      <div className=" max-w-[650px] h-full m-auto max-md:px-5 flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <div className=" md:max-w-[650px] w-full h-full m-auto max-md:px-5 flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="bg-text [clip-path:polygon(0_0,_100%_0,_100%_100%,_0%_100%)] Heading w-full text-center  translate-y-100 text-gray-100  text-4xl md:text-[85px] leading-[120%] font-semibold ">
           Dream big. <br /> We'll digitize it.
         </div>
