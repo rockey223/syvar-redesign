@@ -60,7 +60,7 @@ const Cursor = () => {
   return (
     <div
       ref={cursor}
-      className="cursor fixed top-0 left-0 w-5 h-5 rounded-full pointer-events-none z-50 flex justify-center items-center bg-[rgba(0,0,0,0.6)] opacity-0"
+      className="cursor hidden fixed top-0 left-0 w-5 h-5 rounded-full pointer-events-none z-50 lg:flex justify-center items-center bg-[rgba(0,0,0,0.6)] opacity-0"
     >
       <span
         ref={cursorText}
