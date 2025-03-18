@@ -62,6 +62,7 @@ const Contact = ({ ref, bgRef, closeContact }) => {
     setValue("challenges", updatedServices);
     setError("challenges",{message: ""})
   };
+  
   const submitForm = async (data) => {
     try {
       await axios.post("/api/contactUsEmail", data);

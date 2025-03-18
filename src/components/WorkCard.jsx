@@ -48,7 +48,7 @@ const WorkCard = ({ work, index }) => {
             : "col-start-1 col-end-5 lg:col-start-1 lg:col-end-10 xl:col-start-1 xl:col-end-10"
         }`}
     >
-      <div className="featured_image h-[450px] lg:h-[500px] 2xl:h-[760px] w-full overflow-hidden rounded-xl hover:brightness-50 transition-all ease-in-out duration-200">
+      <div className="featured_image h-[450px] lg:h-[500px] 2xl:h-[760px] w-full overflow-hidden rounded-xl  lg:hover:brightness-50 transition-all ease-in-out duration-200">
         {/* Custom Cursor */}
 
         {/* Image */}
