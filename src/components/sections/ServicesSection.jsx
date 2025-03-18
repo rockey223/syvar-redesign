@@ -17,18 +17,20 @@ const serviceList = [
 const ServicesSection = () => {
   const services = useRef();
 
-  
-
   return (
     <section id="services_section">
-      <div className="h-full lg:h-[100vh] max-h-[1000px]  bg-[var(--bg-change)] w-full py-[100px] lg:py-[149px] flex flex-col gap-16 md:gap-[104px] ">
-        <div  ref={services}  className="h-full flex flex-col justify-center intems-center gap-20 " data-aos="fade-up">
+      <div className="h-full  lg:h-[100vh] max-h-[1000px] px-5 xl:px-[60px] lg:px-[50px]  bg-[var(--bg-change)] w-full py-[100px] lg:py-[149px] flex flex-col gap-16 md:gap-[104px] ">
+        <div
+          ref={services}
+          className="h-full flex flex-col justify-center intems-center gap-20 "
+          data-aos="fade-up"
+        >
           <div className="services_header w-full text-center">
             <h2 className="px-1 text-gray-200 text-4xl md:text-[64px] font-medium">
               Delivering on your Expectations
             </h2>
           </div>
-          <div className="services_list w-full xl:px-[138px] 2xl:px-[500px] mb-2 md:mb-5">
+          <div className="services_list w-2/3 mx-auto  mb-2 md:mb-5">
             <ul className="w-full flex flex-wrap gap-x-5 md:gap-x-9 xl:gap-x-2 gap-y-8 items-center justify-center">
               {serviceList.map((service, index) => (
                 <li
