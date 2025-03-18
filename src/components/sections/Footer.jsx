@@ -86,7 +86,6 @@ const Footer = () => {
         <div className="footer_contact flex flex-col md:flex-row gap-y-[10px] gap-x-[30px] text-gray-600">
           <Link
             href={"tel:+9779840575636"}
-
             className="text-xl md:text-base 2xl:text-xl hover:text-yellow-300"
           >
             +977 9840575736

@@ -48,17 +48,16 @@
   --color-yellow-900: #875d0e;
 }
 
-
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
-      display: none;
+    display: none;
   }
- /* Hide scrollbar for IE, Edge and Firefox */
+  /* Hide scrollbar for IE, Edge and Firefox */
   .no-scrollbar {
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
-}
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
 /* section{
   border: 1px solid red;
@@ -73,12 +72,17 @@ html::-webkit-scrollbar {
   width: 0;
 }
 
-.char{
+.char {
   opacity: 0;
   transform: translateY(100px);
 }
 
-
+.hero-big-text {
+  font-size: clamp(36px, 4.427vw, 85px);
+}
+.workArchive{
+  margin-top: clamp(20px,2.292vw,44px)
+}
 .i-carbon-close {
   --un-icon: url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 32 32' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='M17.414 16L24 9.414L22.586 8L16 14.586L9.414 8L8 9.414L14.586 16L8 22.586L9.414 24L16 17.414L22.586 24L24 22.586z'/%3E%3C/svg%3E");
   mask: var(--un-icon) no-repeat;
@@ -99,7 +103,7 @@ section {
 }
 
 .blurnav {
-  height: 300%;
+  height: 150%;
   left: 0;
   pointer-events: none;
   position: absolute;
@@ -205,8 +209,8 @@ section {
   );
 }
 
-@media only screen and (max-width : 768px) {
-.mpoint {
+@media only screen and (max-width: 768px) {
+  .mpoint {
     background: linear-gradient(
       to right,
       rgb(0, 0, 0) 50%,
@@ -218,7 +222,6 @@ section {
     background-clip: text;
     -webkit-background-clip: text;
   }
-
 }
 
 @media (orientation: portrait) {

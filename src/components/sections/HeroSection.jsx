@@ -52,10 +52,10 @@ const HeroSection = () => {
   return (
     <section
       id="hero_section"
-      className="h-screen w-full bg-[url('/images/bg.png')] bg-no-repeat bg-cover overflow-hidden relative"
+      className="h-screen max-h-[1000px]  w-full bg-[url('/images/bg.png')] bg-no-repeat bg-cover overflow-hidden relative"
     >
-      <div className=" max-w-[650px] h-full m-auto max-md:px-5 flex flex-col justify-center items-center relative">
-        <div className="bg-text [clip-path:polygon(0_0,_100%_0,_100%_100%,_0%_100%)] Heading w-full text-center  translate-y-100 text-gray-100  text-4xl md:text-[85px] leading-[120%] font-semibold ">
+      <div className="max-w-[650px] h-full m-auto max-md:px-5 flex flex-col justify-center items-center relative">
+        <div className="bg-text hero-big-text [clip-path:polygon(0_0,_100%_0,_100%_100%,_0%_100%)] Heading w-full text-center  translate-y-100 text-gray-100  leading-[120%] font-semibold ">
           Dream big. <br /> We'll digitize it.
         </div>
 
@@ -72,7 +72,7 @@ const HeroSection = () => {
         </button>
         <button
           href="#featured_section"
-          className="text-gray-600 transition-colors duration-300 ease-in-out cursor-pointer hover:text-white/80 group flex flex-col justify-center items-center mt-44"
+          className="workArchive text-gray-600 transition-colors duration-300 ease-in-out cursor-pointer hover:text-white/80 group flex flex-col justify-center items-center "
           onClick={(e) => {
             e.preventDefault();
             gsap.to(window, { duration: 1, scrollTo: "#featured_section" });
